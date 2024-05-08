@@ -32,7 +32,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.BtnWordFileEnc = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.TbEncPwd1 = new System.Windows.Forms.TextBox();
             this.TbEncPwd2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -75,15 +74,6 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Encrypt Word File";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.progressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.progressBar1.Location = new System.Drawing.Point(182, 422);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(256, 23);
-            this.progressBar1.TabIndex = 10;
             // 
             // TbEncPwd1
             // 
@@ -133,10 +123,10 @@
             // 
             this.LblProceeding.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblProceeding.ForeColor = System.Drawing.Color.White;
-            this.LblProceeding.Location = new System.Drawing.Point(182, 404);
+            this.LblProceeding.Location = new System.Drawing.Point(150, 408);
             this.LblProceeding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblProceeding.Name = "LblProceeding";
-            this.LblProceeding.Size = new System.Drawing.Size(259, 41);
+            this.LblProceeding.Size = new System.Drawing.Size(321, 28);
             this.LblProceeding.TabIndex = 15;
             this.LblProceeding.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -159,9 +149,9 @@
             this.BtnShowPWD1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnShowPWD1.ForeColor = System.Drawing.Color.MidnightBlue;
             this.BtnShowPWD1.Image = ((System.Drawing.Image)(resources.GetObject("BtnShowPWD1.Image")));
-            this.BtnShowPWD1.Location = new System.Drawing.Point(447, 173);
+            this.BtnShowPWD1.Location = new System.Drawing.Point(446, 173);
             this.BtnShowPWD1.Name = "BtnShowPWD1";
-            this.BtnShowPWD1.Size = new System.Drawing.Size(23, 24);
+            this.BtnShowPWD1.Size = new System.Drawing.Size(35, 24);
             this.BtnShowPWD1.TabIndex = 17;
             this.BtnShowPWD1.UseVisualStyleBackColor = true;
             this.BtnShowPWD1.Click += new System.EventHandler(this.BtnShowPWD1_Click);
@@ -172,9 +162,9 @@
             this.BtnShowPWD2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnShowPWD2.ForeColor = System.Drawing.Color.MidnightBlue;
             this.BtnShowPWD2.Image = ((System.Drawing.Image)(resources.GetObject("BtnShowPWD2.Image")));
-            this.BtnShowPWD2.Location = new System.Drawing.Point(447, 273);
+            this.BtnShowPWD2.Location = new System.Drawing.Point(447, 272);
             this.BtnShowPWD2.Name = "BtnShowPWD2";
-            this.BtnShowPWD2.Size = new System.Drawing.Size(23, 24);
+            this.BtnShowPWD2.Size = new System.Drawing.Size(35, 24);
             this.BtnShowPWD2.TabIndex = 18;
             this.BtnShowPWD2.UseVisualStyleBackColor = true;
             this.BtnShowPWD2.Click += new System.EventHandler(this.BtnShowPWD2_Click);
@@ -185,9 +175,9 @@
             this.BtnHidePWD1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnHidePWD1.ForeColor = System.Drawing.Color.MidnightBlue;
             this.BtnHidePWD1.Image = ((System.Drawing.Image)(resources.GetObject("BtnHidePWD1.Image")));
-            this.BtnHidePWD1.Location = new System.Drawing.Point(152, 173);
+            this.BtnHidePWD1.Location = new System.Drawing.Point(142, 173);
             this.BtnHidePWD1.Name = "BtnHidePWD1";
-            this.BtnHidePWD1.Size = new System.Drawing.Size(23, 24);
+            this.BtnHidePWD1.Size = new System.Drawing.Size(35, 24);
             this.BtnHidePWD1.TabIndex = 19;
             this.BtnHidePWD1.UseVisualStyleBackColor = true;
             this.BtnHidePWD1.Visible = false;
@@ -199,9 +189,9 @@
             this.BtnHidePWD2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnHidePWD2.ForeColor = System.Drawing.Color.MidnightBlue;
             this.BtnHidePWD2.Image = ((System.Drawing.Image)(resources.GetObject("BtnHidePWD2.Image")));
-            this.BtnHidePWD2.Location = new System.Drawing.Point(152, 273);
+            this.BtnHidePWD2.Location = new System.Drawing.Point(141, 273);
             this.BtnHidePWD2.Name = "BtnHidePWD2";
-            this.BtnHidePWD2.Size = new System.Drawing.Size(23, 24);
+            this.BtnHidePWD2.Size = new System.Drawing.Size(35, 24);
             this.BtnHidePWD2.TabIndex = 20;
             this.BtnHidePWD2.UseVisualStyleBackColor = true;
             this.BtnHidePWD2.Visible = false;
@@ -212,7 +202,7 @@
             this.labelImg.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelImg.ForeColor = System.Drawing.Color.White;
             this.labelImg.Image = ((System.Drawing.Image)(resources.GetObject("labelImg.Image")));
-            this.labelImg.Location = new System.Drawing.Point(266, 60);
+            this.labelImg.Location = new System.Drawing.Point(265, 60);
             this.labelImg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelImg.Name = "labelImg";
             this.labelImg.Size = new System.Drawing.Size(74, 53);
@@ -238,14 +228,12 @@
             this.Controls.Add(this.TbEncPwd1);
             this.Controls.Add(this.BtnWordFileEnc);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBar1);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EncWordFile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "P-GEN";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,7 +244,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button BtnWordFileEnc;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.TextBox TbEncPwd1;
         private System.Windows.Forms.TextBox TbEncPwd2;
         private System.Windows.Forms.Label label2;

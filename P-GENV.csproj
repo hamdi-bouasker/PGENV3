@@ -128,17 +128,23 @@
     <Compile Include="AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
-    <Compile Include="DecFile.cs">
+    <Compile Include="DecWordFile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DecFile.Designer.cs">
-      <DependentUpon>DecFile.cs</DependentUpon>
+    <Compile Include="DecWordFile.Designer.cs">
+      <DependentUpon>DecWordFile.cs</DependentUpon>
     </Compile>
     <Compile Include="EncWordFile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EncWordFile.Designer.cs">
       <DependentUpon>EncWordFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EncXLFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EncXLFile.Designer.cs">
+      <DependentUpon>EncXLFile.cs</DependentUpon>
     </Compile>
     <Compile Include="GeneratePasswords.cs">
       <SubType>Form</SubType>
@@ -176,11 +182,14 @@
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DecFile.resx">
-      <DependentUpon>DecFile.cs</DependentUpon>
+    <EmbeddedResource Include="DecWordFile.resx">
+      <DependentUpon>DecWordFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EncWordFile.resx">
       <DependentUpon>EncWordFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EncXLFile.resx">
+      <DependentUpon>EncXLFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GeneratePasswords.resx">
       <DependentUpon>GeneratePasswords.cs</DependentUpon>

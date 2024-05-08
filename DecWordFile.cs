@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace PGENV3
 {
-    public partial class DecFile : Form
+    public partial class DecWordFile : Form
     {
-        public DecFile()
+        public DecWordFile()
         {
             InitializeComponent();
         }

@@ -37,7 +37,7 @@ namespace PGENV3
 
         private void DecFileMenuItem_Click(object sender, EventArgs e)
         {
-            DecFile decFile = new DecFile();
+            DecWordFile decFile = new DecWordFile();
             decFile.MdiParent = this;
             decFile.Show();
         }

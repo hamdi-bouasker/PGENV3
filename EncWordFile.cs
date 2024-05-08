@@ -45,39 +45,57 @@ namespace PGENV3
             outputStream.Close();
         }
 
-        private void BtnWordFileEnc_Click(object sender, EventArgs e)
+        private async Task EncwordFile()
         {
+            if (TbEncPwd1.Text != TbEncPwd2.Text || TbEncPwd1.Text == "" && TbEncPwd2.Text == "")
+            {
+                MessageBox.Show("Please insert the same password!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "docx files (*.docx)|*.docx|All files (*.*)|*.*";
-            if (TbEncPwd1.Text != TbEncPwd2.Text)
-            {
-                MessageBox.Show("Repeat the same password!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
             if (TbEncPwd1.Text == TbEncPwd2.Text && ofd.ShowDialog() == DialogResult.OK)
             {
+
                 try
                 {
                     if (gte.GetFileExtension(ofd.FileName) == ".docx")
                     {
-                        EncryptDOCXFile(ofd.FileName);
-                        File.Delete(ofd.FileName);
-                        MessageBox.Show("File Successfully Encrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LblProceeding.Text = "Porceeding... Do not exit the software!";
+                        var task = Task.Run(() => EncryptDOCXFile(ofd.FileName)).ContinueWith(t => File.Delete(ofd.FileName));
+                        await task;
+                        if (task.IsCompleted)
+                        {
+                            LblProceeding.Text = "Done!";
+                            MessageBox.Show("File Successfully Encrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
 
                     }
 
                     if (gte.GetFileExtension(ofd.FileName) != ".docx")
                     {
-                        MessageBox.Show("File version is not supported!" + '\n' + '\n' + "Only Word 2019 version and above are supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        //return;
-                    }                  
+                        MessageBox.Show("File version is not supported!" + '\n' + '\n' + "Only Word version 2019 and above are supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    LblProceeding.ResetText();
                 }
 
-                catch (Exception ex) 
+                catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
+        }
+
+        private void BtnWordFileEnc_Click(object sender, EventArgs e)
+        {
+            _ = EncwordFile();
+            
         }
 
         private void BtnShowPWD1_Click(object sender, EventArgs e)
