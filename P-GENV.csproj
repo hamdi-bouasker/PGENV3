@@ -134,6 +134,12 @@
     <Compile Include="DecWordFile.Designer.cs">
       <DependentUpon>DecWordFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="EncPDFFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EncPDFFile.Designer.cs">
+      <DependentUpon>EncPDFFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="EncWordFile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DecWordFile.resx">
       <DependentUpon>DecWordFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EncPDFFile.resx">
+      <DependentUpon>EncPDFFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EncWordFile.resx">
       <DependentUpon>EncWordFile.cs</DependentUpon>

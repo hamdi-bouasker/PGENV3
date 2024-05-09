@@ -48,5 +48,19 @@ namespace PGENV3
             encFile.MdiParent = this;
             encFile.Show();
         }
+
+        private void EncExcelFile_Click(object sender, EventArgs e)
+        {
+            EncXLFile EncXL = new EncXLFile();
+            EncXL.MdiParent = this;
+            EncXL.Show();
+        }
+
+        private void EncPDFFile_Click(object sender, EventArgs e)
+        {
+            EncPDFFile EncPDF = new EncPDFFile();
+            EncPDF.MdiParent = this;
+            EncPDF.Show();
+        }
     }
 }

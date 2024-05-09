@@ -63,30 +63,33 @@ namespace PGENV3
                 {
                     if (gte.GetFileExtension(ofd.FileName) == ".docx")
                     {
-                        LblProceeding.Text = "Porceeding... Do not exit the software!";
+                        LblProceeding.Text = "Proceeding... Do not exit the software!";
                         var task = Task.Run(() => EncryptDOCXFile(ofd.FileName)).ContinueWith(t => File.Delete(ofd.FileName));
                         await task;
                         if (task.IsCompleted)
                         {
                             LblProceeding.Text = "Done!";
                             MessageBox.Show("File Successfully Encrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                            LblProceeding.ResetText();
                         }
 
                     }
 
                     if (gte.GetFileExtension(ofd.FileName) != ".docx")
                     {
+                        LblProceeding.ResetText();
                         MessageBox.Show("File version is not supported!" + '\n' + '\n' + "Only Word version 2019 and above are supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
-                    LblProceeding.ResetText();
+
                 }
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LblProceeding.ResetText();
+                    MessageBox.Show("Error occured! Maybe the file is already encrypted?!" + '\n' + '\n' + ex.Message, "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
             }
@@ -131,6 +134,6 @@ namespace PGENV3
             Close();
         }
 
-        
+       
     }
 }

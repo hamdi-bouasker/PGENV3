@@ -54,6 +54,7 @@
             this.wordToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.excelToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.pDFToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,11 +111,13 @@
             // 
             this.EncExcelFile.Name = "EncExcelFile";
             resources.ApplyResources(this.EncExcelFile, "EncExcelFile");
+            this.EncExcelFile.Click += new System.EventHandler(this.EncExcelFile_Click);
             // 
             // EncPDFFile
             // 
             this.EncPDFFile.Name = "EncPDFFile";
             resources.ApplyResources(this.EncPDFFile, "EncPDFFile");
+            this.EncPDFFile.Click += new System.EventHandler(this.EncPDFFile_Click);
             // 
             // EncMultiFilesMenuItem
             // 
@@ -231,6 +234,7 @@
             this.IsMdiContainer = true;
             this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -266,6 +270,7 @@
         private System.Windows.Forms.ToolStripMenuItem wordToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem3;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
 

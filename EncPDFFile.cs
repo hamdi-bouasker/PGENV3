@@ -1,4 +1,5 @@
-﻿using Syncfusion.XlsIO;
+﻿using Syncfusion.Pdf.Parsing;
+using Syncfusion.Pdf.Security;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,46 +13,46 @@ using System.Windows.Forms;
 
 namespace PGENV3
 {
-    public partial class EncXLFile : Form
+    public partial class EncPDFFile : Form
     {
-        public EncXLFile()
+        public EncPDFFile()
         {
             InitializeComponent();
         }
 
         GetPathOrExtention gte = new GetPathOrExtention();
 
-        private void EncryptXLFile(string fileName)
+        private void EncryptPDFFile(string fileName)
         {
-            using (ExcelEngine excelEngine = new ExcelEngine())
-            {
-                IApplication application = excelEngine.Excel;
-                application.DefaultVersion = ExcelVersion.Xlsx;
+            //Load the PDF document.
+            FileStream docStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            PdfLoadedDocument document = new PdfLoadedDocument(docStream);
 
-                FileStream inputStream = new FileStream(fileName, FileMode.Open, FileAccess.ReadWrite);
+            //Document security.
+            PdfSecurity security = document.Security;
+            //Specifies key size and encryption algorithm.
+            security.KeySize = PdfEncryptionKeySize.Key256Bit;
+            security.Algorithm = PdfEncryptionAlgorithm.AES;
+            //Specifies encryption option.
+            security.EncryptionOptions = PdfEncryptionOptions.EncryptAllContents;
+            security.OwnerPassword = TbEncPwd2.Text;
+            security.UserPassword = TbEncPwd2.Text;
 
-                //Open Excel
-                IWorkbook workbook = application.Workbooks.Open(inputStream);
-                IWorksheet worksheet = workbook.Worksheets[0];
+            FileStream outputFileStream = new FileStream(gte.GetDirPath(fileName) + "\\Encrypted-" + gte.GetfileName(fileName), FileMode.Create, FileAccess.ReadWrite);
 
-                //Encrypt workbook with password
-                workbook.PasswordToOpen = TbEncPwd2.Text;
+            //Save the PDF document to file stream.
+            document.Save(outputFileStream);
 
-                #region Save
-                //Saving the workbook
-                FileStream outputStream = new FileStream(gte.GetDirPath(fileName) + "\\Encrypted-" + gte.GetfileName(fileName), FileMode.Create, FileAccess.Write);
-                workbook.SaveAs(outputStream);
-                #endregion
-
-                //Dispose streams
-                outputStream.Close();
-                inputStream.Close();
-                workbook.Close();
-            }
-
+            //Save the document into stream.
+            //MemoryStream stream = new MemoryStream();
+            //document.Save(stream);
+            //Close the document.
+            document.Close(true);
+            docStream.Close();
+            outputFileStream.Close();
         }
 
-        private async Task EncryptXLFile()
+        private async Task EncPDFfile()
         {
             if (TbEncPwd1.Text != TbEncPwd2.Text || TbEncPwd1.Text == "" && TbEncPwd2.Text == "")
             {
@@ -60,17 +61,17 @@ namespace PGENV3
             }
 
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "xlsx files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            ofd.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
 
             if (TbEncPwd1.Text == TbEncPwd2.Text && ofd.ShowDialog() == DialogResult.OK)
             {
 
                 try
                 {
-                    if (gte.GetFileExtension(ofd.FileName) == ".xlsx")
+                    if (gte.GetFileExtension(ofd.FileName) == ".pdf")
                     {
                         LblProceeding.Text = "Proceeding... Do not exit the software!";
-                        var task = Task.Run(() => EncryptXLFile(ofd.FileName)).ContinueWith(t => File.Delete(ofd.FileName));
+                        var task = Task.Run(() => EncryptPDFFile(ofd.FileName)).ContinueWith(t => File.Delete(ofd.FileName));
                         await task;
                         if (task.IsCompleted)
                         {
@@ -80,15 +81,6 @@ namespace PGENV3
                         }
 
                     }
-
-                    if (gte.GetFileExtension(ofd.FileName) != ".xlsx")
-                    {
-                        LblProceeding.ResetText();
-                        MessageBox.Show("File version is not supported!" + '\n' + '\n' + "Only Excel version 2019 and above are supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    
                 }
 
                 catch (Exception ex)
@@ -101,40 +93,40 @@ namespace PGENV3
             }
         }
 
-        private void BtnXLFileEnc_Click(object sender, EventArgs e)
+        private void BtnWordFileEnc_Click(object sender, EventArgs e)
         {
-            _ = EncryptXLFile();
+            _ = EncPDFfile();
         }
 
-        private void BtnShowPWD1_Click_1(object sender, EventArgs e)
+        private void BtnShowPWD1_Click(object sender, EventArgs e)
         {
             BtnShowPWD1.Visible = false;
             BtnHidePWD1.Visible = true;
             TbEncPwd1.PasswordChar = '\0';
         }
 
-        private void BtnShowPWD2_Click_1(object sender, EventArgs e)
+        private void BtnShowPWD2_Click(object sender, EventArgs e)
         {
             BtnHidePWD2.Visible = true;
             BtnShowPWD2.Visible = false;
             TbEncPwd2.PasswordChar = '\0';
         }
 
-        private void BtnHidePWD1_Click_1(object sender, EventArgs e)
+        private void BtnHidePWD1_Click(object sender, EventArgs e)
         {
             BtnShowPWD1.Visible = true;
             BtnHidePWD1.Visible = false;
             TbEncPwd1.PasswordChar = '*';
         }
 
-        private void BtnHidePWD2_Click_1(object sender, EventArgs e)
+        private void BtnHidePWD2_Click(object sender, EventArgs e)
         {
             BtnHidePWD2.Visible = false;
             BtnShowPWD2.Visible = true;
             TbEncPwd2.PasswordChar = '*';
         }
 
-        private void BtnExit_Click_1(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
             Close();
         }
