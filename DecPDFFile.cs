@@ -1,36 +1,40 @@
-﻿using Syncfusion.DocIO.DLS;
-using Syncfusion.DocIO;
-using System;
-using System.IO;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows.Forms;
+using System.Threading.Tasks;
+using System;
+using Syncfusion.Pdf.Parsing;
+using Syncfusion.Pdf.Security;
 
 namespace PGENV3
 {
-    public partial class DecWordFile : Form
+    public partial class DecPDFFile : Form
     {
-        public DecWordFile()
+        public DecPDFFile()
         {
             InitializeComponent();
         }
 
         GetPathOrExtention gte = new GetPathOrExtention();
-        private void DecryptDOCXFile(string fileName)
+
+        private void DecryptPDFFile(string fileName)
         {
+            //Load the PDF document
+            FileStream docStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream, TbDecPwd1.Text);
+            //Change the user password
+            loadedDocument.Security.UserPassword = string.Empty;
 
-            //Load an existing Word document with password.
-            FileStream inputStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
-            WordDocument document = new WordDocument(inputStream, FormatType.Docx, TbDecPwd1.Text);
+            FileStream outputFileStream = new FileStream(gte.GetDirPath(fileName) + "\\" + gte.GetfileName(fileName).Replace("Encrypted-", ""), FileMode.Create, FileAccess.Write);
+            //Save the PDF document to file stream.
 
-            //Save the Word document.
-            FileStream outputStream = new FileStream(gte.GetDirPath(fileName) + "\\" + gte.GetfileName(fileName).Replace("Encrypted-", ""), FileMode.Create, FileAccess.Write);
-            document.Save(outputStream, FormatType.Docx);
-            inputStream.Close();
-            outputStream.Close();
-
+            loadedDocument.Save(outputFileStream);
+            //Close the document
+            docStream.Close();
+            loadedDocument.Close(true);
+            outputFileStream.Close();
         }
 
-        private async Task DecwordFile()
+        private async Task DecPDFfile()
         {
             if (TbDecPwd1.Text == "")
             {
@@ -39,17 +43,16 @@ namespace PGENV3
             }
 
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "docx files (*.docx)|*.docx|All files (*.*)|*.*";
+            ofd.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
 
             if (TbDecPwd1.Text != "" && ofd.ShowDialog() == DialogResult.OK)
             {
-
                 try
                 {
-                    if (gte.GetFileExtension(ofd.FileName) == ".docx")
+                    if (gte.GetFileExtension(ofd.FileName) == ".pdf")
                     {
                         LblProceeding.Text = "Proceeding... Do not exit the software!";
-                        var task = Task.Run(() => DecryptDOCXFile(ofd.FileName)).ContinueWith(t => File.Delete(ofd.FileName));
+                        var task = Task.Run(() => DecryptPDFFile(ofd.FileName)).ContinueWith(t => File.Delete(ofd.FileName));
                         await task;
                         if (task.IsCompleted)
                         {
@@ -57,17 +60,14 @@ namespace PGENV3
                             MessageBox.Show("File Successfully Decrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LblProceeding.ResetText();
                         }
-
                     }
 
-                    if (gte.GetFileExtension(ofd.FileName) != ".docx")
+                    if (gte.GetFileExtension(ofd.FileName) != ".pdf")
                     {
                         LblProceeding.ResetText();
-                        MessageBox.Show("File version is not supported!" + '\n' + '\n' + "Only Word version 2019 and above are supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("File version is not supported!" + '\n' + '\n' + "Only PDF supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-
-
                 }
 
                 catch (Exception)
@@ -76,35 +76,30 @@ namespace PGENV3
                     MessageBox.Show("Error: Ensure the password is correct!" + '\n' + '\n' + "Ensure the file you want to decrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
             }
+        } 
+        private void BtnPDFFileDec_Click(object sender, System.EventArgs e)
+        {
+            _ = DecPDFfile();
         }
 
-        private void BtnShowPWD1_Click_1(object sender, EventArgs e)
+        private void BtnShowPWD1_Click(object sender, EventArgs e)
         {
             BtnShowPWD1.Visible = false;
             BtnHidePWD1.Visible = true;
             TbDecPwd1.PasswordChar = '\0';
         }
 
-        private void BtnHidePWD1_Click_1(object sender, EventArgs e)
+        private void BtnHidePWD1_Click(object sender, EventArgs e)
         {
-
             BtnShowPWD1.Visible = true;
             BtnHidePWD1.Visible = false;
             TbDecPwd1.PasswordChar = '*';
         }
 
-        private void BtnWordFileDec_Click_1(object sender, EventArgs e)
-        {
-            _ = DecwordFile();
-        }
-
-        private void BtnExit_Click_1(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
             Close();
         }
-
-        
     }
 }

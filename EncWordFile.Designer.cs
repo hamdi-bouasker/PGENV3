@@ -79,6 +79,7 @@
             // 
             this.TbEncPwd1.ForeColor = System.Drawing.Color.MidnightBlue;
             this.TbEncPwd1.Location = new System.Drawing.Point(225, 173);
+            this.TbEncPwd1.MaxLength = 16;
             this.TbEncPwd1.Name = "TbEncPwd1";
             this.TbEncPwd1.PasswordChar = '*';
             this.TbEncPwd1.Size = new System.Drawing.Size(259, 23);
@@ -89,6 +90,7 @@
             // 
             this.TbEncPwd2.ForeColor = System.Drawing.Color.MidnightBlue;
             this.TbEncPwd2.Location = new System.Drawing.Point(225, 273);
+            this.TbEncPwd2.MaxLength = 16;
             this.TbEncPwd2.Name = "TbEncPwd2";
             this.TbEncPwd2.PasswordChar = '*';
             this.TbEncPwd2.Size = new System.Drawing.Size(259, 23);
@@ -121,9 +123,9 @@
             // 
             // LblProceeding
             // 
-            this.LblProceeding.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblProceeding.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblProceeding.ForeColor = System.Drawing.Color.White;
-            this.LblProceeding.Location = new System.Drawing.Point(192, 407);
+            this.LblProceeding.Location = new System.Drawing.Point(192, 423);
             this.LblProceeding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblProceeding.Name = "LblProceeding";
             this.LblProceeding.Size = new System.Drawing.Size(321, 28);
@@ -134,7 +136,7 @@
             // 
             this.BtnExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExit.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.BtnExit.Location = new System.Drawing.Point(222, 470);
+            this.BtnExit.Location = new System.Drawing.Point(222, 497);
             this.BtnExit.Margin = new System.Windows.Forms.Padding(4);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(259, 44);
@@ -214,6 +216,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(700, 600);
+            this.ControlBox = false;
             this.Controls.Add(this.labelImg);
             this.Controls.Add(this.BtnHidePWD2);
             this.Controls.Add(this.BtnHidePWD1);
@@ -228,7 +231,7 @@
             this.Controls.Add(this.BtnWordFileEnc);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EncWordFile";

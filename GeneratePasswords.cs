@@ -16,19 +16,19 @@ namespace PGENV3
         {
             int length = int.Parse(NUDCharsInput.Text);
             int num = int.Parse(NUDNumInput.Text);
-            progressBar1.Visible = true;
-            progressBar1.Maximum = num;
-            //progressBar1.Value = 1;
             pwdOutput.Clear();
+            LblProceeding.ResetText();
             try
             {
+                
                 for (int i = 0; i < num; i++)
                 {
-                    
-                    string password = Membership.GeneratePassword(length, length / 3).Replace('.', '?').Replace(';', '!').Replace(':', '#').Replace('_', '}');                   
+
+                    string password = Membership.GeneratePassword(length, length / 3).Replace('.', '?').Replace(';', '!').Replace(':', '#').Replace('_', '}');
                     pwdOutput.AppendText(password + Environment.NewLine);
-                    progressBar1.PerformStep();
+                    LblProceeding.Text = "Done!";
                 }
+                
                 pwdOutput.Visible = true;
             }
 
@@ -46,9 +46,8 @@ namespace PGENV3
                 NUDCharsInput.Value = NUDCharsInput.Minimum;
                 NUDNumInput.Value = NUDNumInput.Minimum;
                 pwdOutput.Clear();
+                LblProceeding.ResetText();
                 pwdOutput.Visible = false;
-                progressBar1.Value = 1;
-                progressBar1.Visible = false;
                 MessageBox.Show("Password Copied!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -71,9 +70,8 @@ namespace PGENV3
                     NUDCharsInput.Value = NUDCharsInput.Minimum;
                     NUDNumInput.Value = NUDNumInput.Minimum;
                     pwdOutput.Clear();
+                    LblProceeding.ResetText();
                     pwdOutput.Visible = false;
-                    progressBar1.Value = 1;
-                    progressBar1.Visible = false;
                 }
             }
             else
@@ -87,9 +85,8 @@ namespace PGENV3
             NUDCharsInput.Value = NUDCharsInput.Minimum;
             NUDNumInput.Value = NUDNumInput.Minimum;
             pwdOutput.Clear();
+            LblProceeding.ResetText();
             pwdOutput.Visible = false;
-            progressBar1.Value = 1;
-            progressBar1.Visible = false;
             MessageBox.Show("All inputs are reset!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnExit = new System.Windows.Forms.Button();
             this.BtnClearInputs = new System.Windows.Forms.Button();
             this.BtnExportPWD = new System.Windows.Forms.Button();
             this.BtnCopyPWD = new System.Windows.Forms.Button();
@@ -39,10 +40,9 @@
             this.NUDNumInput = new System.Windows.Forms.NumericUpDown();
             this.NUDCharsInput = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.pwdOutput = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.BtnExit = new System.Windows.Forms.Button();
+            this.LblProceeding = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDNumInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDCharsInput)).BeginInit();
@@ -66,6 +66,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(286, 510);
             this.panel1.TabIndex = 0;
+            // 
+            // BtnExit
+            // 
+            this.BtnExit.AutoSize = true;
+            this.BtnExit.BackColor = System.Drawing.Color.White;
+            this.BtnExit.FlatAppearance.BorderSize = 0;
+            this.BtnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.BtnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnExit.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.BtnExit.Location = new System.Drawing.Point(55, 449);
+            this.BtnExit.Name = "BtnExit";
+            this.BtnExit.Size = new System.Drawing.Size(179, 39);
+            this.BtnExit.TabIndex = 9;
+            this.BtnExit.Text = "Exit";
+            this.BtnExit.UseVisualStyleBackColor = false;
+            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // BtnClearInputs
             // 
@@ -205,29 +222,13 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.progressBar1);
+            this.panel2.Controls.Add(this.LblProceeding);
             this.panel2.Controls.Add(this.pwdOutput);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(286, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(484, 510);
             this.panel2.TabIndex = 1;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.progressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.progressBar1.Location = new System.Drawing.Point(18, 420);
-            this.progressBar1.MarqueeAnimationSpeed = 10;
-            this.progressBar1.Maximum = 128;
-            this.progressBar1.Minimum = 1;
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(450, 23);
-            this.progressBar1.Step = 1;
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 2;
-            this.progressBar1.Value = 1;
-            this.progressBar1.Visible = false;
             // 
             // pwdOutput
             // 
@@ -243,22 +244,16 @@
             this.pwdOutput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.pwdOutput.Visible = false;
             // 
-            // BtnExit
+            // LblProceeding
             // 
-            this.BtnExit.AutoSize = true;
-            this.BtnExit.BackColor = System.Drawing.Color.White;
-            this.BtnExit.FlatAppearance.BorderSize = 0;
-            this.BtnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.BtnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnExit.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.BtnExit.Location = new System.Drawing.Point(55, 449);
-            this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(179, 39);
-            this.BtnExit.TabIndex = 9;
-            this.BtnExit.Text = "Exit";
-            this.BtnExit.UseVisualStyleBackColor = false;
-            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            this.LblProceeding.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblProceeding.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.LblProceeding.Location = new System.Drawing.Point(29, 449);
+            this.LblProceeding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblProceeding.Name = "LblProceeding";
+            this.LblProceeding.Size = new System.Drawing.Size(439, 28);
+            this.LblProceeding.TabIndex = 16;
+            this.LblProceeding.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GeneratePasswords
             // 
@@ -298,8 +293,8 @@
         private System.Windows.Forms.Button BtnExportPWD;
         private System.Windows.Forms.Button BtnCopyPWD;
         private System.Windows.Forms.TextBox pwdOutput;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button BtnExit;
+        private System.Windows.Forms.Label LblProceeding;
     }
 }

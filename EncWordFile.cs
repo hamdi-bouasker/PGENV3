@@ -1,21 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.ComTypes;
-using System.Security.Cryptography;
-using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI;
 using System.Windows.Forms;
 using Syncfusion.DocIO.DLS;
 using Syncfusion.DocIO;
-using Microsoft.Win32;
-using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
+
 
 namespace PGENV3
 {
@@ -40,6 +29,7 @@ namespace PGENV3
 
             // Save the encrypted Word document.
             FileStream outputStream = new FileStream(gte.GetDirPath(fileName) + "\\Encrypted-" + gte.GetfileName(fileName), FileMode.Create, FileAccess.Write);
+            
             document.Save(outputStream, FormatType.Docx);
             inputStream.Close();
             outputStream.Close();
@@ -50,6 +40,12 @@ namespace PGENV3
             if (TbEncPwd1.Text != TbEncPwd2.Text || TbEncPwd1.Text == "" && TbEncPwd2.Text == "")
             {
                 MessageBox.Show("Please insert the same password!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (TbEncPwd1.Text.Length < 8 && TbEncPwd2.Text.Length < 8)
+            {
+                MessageBox.Show("Minimum password length is 8 characters!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -66,6 +62,7 @@ namespace PGENV3
                         LblProceeding.Text = "Proceeding... Do not exit the software!";
                         var task = Task.Run(() => EncryptDOCXFile(ofd.FileName)).ContinueWith(t => File.Delete(ofd.FileName));
                         await task;
+                        
                         if (task.IsCompleted)
                         {
                             LblProceeding.Text = "Done!";
@@ -85,10 +82,10 @@ namespace PGENV3
 
                 }
 
-                catch (Exception ex)
+                catch (Exception)
                 {
                     LblProceeding.ResetText();
-                    MessageBox.Show("Error occured! Maybe the file is already encrypted?!" + '\n' + '\n' + ex.Message, "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error: Ensure the file you want to enccrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 

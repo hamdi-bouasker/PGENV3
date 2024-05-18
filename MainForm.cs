@@ -20,26 +20,10 @@ namespace PGENV3
 
         private void TsBtnGeneratePWD_Click(object sender, EventArgs e)
         {
-            //pictureBox1.Visible = false;
             GeneratePasswords gp = new GeneratePasswords();
             gp.MdiParent = this;          
             gp.Show();
            
-        }
-
-        private void EncMultiFilesMenuItem_Click(object sender, EventArgs e)
-        {
-            //pictureBox1.Visible= false;
-            MultiEncrypt mt = new MultiEncrypt();
-            mt.MdiParent = this;
-            mt.Show();
-        }
-
-        private void DecFileMenuItem_Click(object sender, EventArgs e)
-        {
-            DecWordFile decFile = new DecWordFile();
-            decFile.MdiParent = this;
-            decFile.Show();
         }
 
         private void EncWordFile_Click(object sender, EventArgs e)
@@ -61,6 +45,41 @@ namespace PGENV3
             EncPDFFile EncPDF = new EncPDFFile();
             EncPDF.MdiParent = this;
             EncPDF.Show();
+        }
+
+        private void MenuItemDecWordFile_Click(object sender, EventArgs e)
+        {
+            DecWordFile decWordFile = new DecWordFile();
+            decWordFile.MdiParent = this;
+            decWordFile.Show();
+        }
+
+        private void MenuItemDecXLFile_Click(object sender, EventArgs e)
+        {
+            DecXLFile decXL = new DecXLFile();
+            decXL.MdiParent = this;
+            decXL.Show();
+        }
+
+        private void MenuItemDecPDFFile_Click(object sender, EventArgs e)
+        {
+            DecPDFFile decPDF = new DecPDFFile();
+            decPDF.MdiParent = this;
+            decPDF.Show();
+        }
+
+        private void BtnHelp_Click(object sender, EventArgs e)
+        {
+            Help hp = new Help();
+            hp.MdiParent = this;
+            hp.Show();
+        }
+
+        private void BtnAbout_Click(object sender, EventArgs e)
+        {
+            AboutBox1 aboutBox1 = new AboutBox1();
+            aboutBox1.MdiParent = this;
+            aboutBox1.Show();
         }
     }
 }

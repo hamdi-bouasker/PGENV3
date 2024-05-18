@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("P-GEN")]
 [assembly: AssemblyDescription("Secure Password Generator & Strong Files Encryptor - Decryptor")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("MedTech")]
+[assembly: AssemblyCompany("MedTech by Hamdi Bouasker")]
 [assembly: AssemblyProduct("P-GEN")]
 [assembly: AssemblyCopyright("Copyright ©  2024 All Rights Reserved")]
 [assembly: AssemblyTrademark("MedTech")]

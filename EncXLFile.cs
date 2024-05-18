@@ -1,12 +1,6 @@
 ﻿using Syncfusion.XlsIO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -56,6 +50,12 @@ namespace PGENV3
             if (TbEncPwd1.Text != TbEncPwd2.Text || TbEncPwd1.Text == "" && TbEncPwd2.Text == "")
             {
                 MessageBox.Show("Please insert the same password!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (TbEncPwd1.Text.Length < 8 && TbEncPwd2.Text.Length < 8)
+            {
+                MessageBox.Show("Minimum password length is 8 characters!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

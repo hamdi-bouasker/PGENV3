@@ -1,15 +1,10 @@
-﻿using Syncfusion.Pdf.Parsing;
-using Syncfusion.Pdf.Security;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Syncfusion.Pdf.Parsing;
+using Syncfusion.Pdf.Security;
+
 
 namespace PGENV3
 {
@@ -42,11 +37,6 @@ namespace PGENV3
 
             //Save the PDF document to file stream.
             document.Save(outputFileStream);
-
-            //Save the document into stream.
-            //MemoryStream stream = new MemoryStream();
-            //document.Save(stream);
-            //Close the document.
             document.Close(true);
             docStream.Close();
             outputFileStream.Close();
@@ -57,6 +47,12 @@ namespace PGENV3
             if (TbEncPwd1.Text != TbEncPwd2.Text || TbEncPwd1.Text == "" && TbEncPwd2.Text == "")
             {
                 MessageBox.Show("Please insert the same password!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (TbEncPwd1.Text.Length < 8 && TbEncPwd2.Text.Length < 8)
+            {
+                MessageBox.Show("Minimum password length is 8 characters!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -83,17 +79,17 @@ namespace PGENV3
                     }
                 }
 
-                catch (Exception ex)
+                catch (Exception)
                 {
                     LblProceeding.ResetText();
-                    MessageBox.Show("Error occured! Maybe the file is already encrypted?!" + '\n' + '\n' + ex.Message, "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error: Ensure the password is correct!" + '\n' + '\n' + "Ensure the file you want to decrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
             }
         }
 
-        private void BtnWordFileEnc_Click(object sender, EventArgs e)
+        private void BtnPDFFileEnc_Click(object sender, EventArgs e)
         {
             _ = EncPDFfile();
         }
