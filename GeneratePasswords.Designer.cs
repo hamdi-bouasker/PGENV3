@@ -40,9 +40,9 @@
             this.NUDNumInput = new System.Windows.Forms.NumericUpDown();
             this.NUDCharsInput = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.LblProceeding = new System.Windows.Forms.Label();
             this.pwdOutput = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.LblProceeding = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDNumInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDCharsInput)).BeginInit();
@@ -51,7 +51,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel1.Controls.Add(this.BtnExit);
             this.panel1.Controls.Add(this.BtnClearInputs);
             this.panel1.Controls.Add(this.BtnExportPWD);
@@ -155,7 +155,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(69, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(165, 21);
@@ -165,7 +165,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(69, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 21);
@@ -177,6 +177,11 @@
             this.NUDNumInput.BackColor = System.Drawing.Color.White;
             this.NUDNumInput.ForeColor = System.Drawing.Color.MidnightBlue;
             this.NUDNumInput.Location = new System.Drawing.Point(55, 149);
+            this.NUDNumInput.Maximum = new decimal(new int[] {
+            96,
+            0,
+            0,
+            0});
             this.NUDNumInput.Minimum = new decimal(new int[] {
             1,
             0,
@@ -199,12 +204,12 @@
             this.NUDCharsInput.ForeColor = System.Drawing.Color.MidnightBlue;
             this.NUDCharsInput.Location = new System.Drawing.Point(55, 62);
             this.NUDCharsInput.Maximum = new decimal(new int[] {
-            128,
+            96,
             0,
             0,
             0});
             this.NUDCharsInput.Minimum = new decimal(new int[] {
-            16,
+            12,
             0,
             0,
             0});
@@ -213,7 +218,7 @@
             this.NUDCharsInput.TabIndex = 1;
             this.NUDCharsInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.NUDCharsInput.Value = new decimal(new int[] {
-            16,
+            12,
             0,
             0,
             0});
@@ -230,20 +235,6 @@
             this.panel2.Size = new System.Drawing.Size(484, 510);
             this.panel2.TabIndex = 1;
             // 
-            // pwdOutput
-            // 
-            this.pwdOutput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.pwdOutput.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.pwdOutput.Location = new System.Drawing.Point(18, 39);
-            this.pwdOutput.Multiline = true;
-            this.pwdOutput.Name = "pwdOutput";
-            this.pwdOutput.ReadOnly = true;
-            this.pwdOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.pwdOutput.Size = new System.Drawing.Size(450, 353);
-            this.pwdOutput.TabIndex = 1;
-            this.pwdOutput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.pwdOutput.Visible = false;
-            // 
             // LblProceeding
             // 
             this.LblProceeding.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -255,21 +246,42 @@
             this.LblProceeding.TabIndex = 16;
             this.LblProceeding.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pwdOutput
+            // 
+            this.pwdOutput.BackColor = System.Drawing.Color.MidnightBlue;
+            this.pwdOutput.ForeColor = System.Drawing.Color.White;
+            this.pwdOutput.Location = new System.Drawing.Point(18, 39);
+            this.pwdOutput.Multiline = true;
+            this.pwdOutput.Name = "pwdOutput";
+            this.pwdOutput.ReadOnly = true;
+            this.pwdOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.pwdOutput.Size = new System.Drawing.Size(450, 353);
+            this.pwdOutput.TabIndex = 1;
+            this.pwdOutput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pwdOutput.Visible = false;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.Color.White;
+            this.toolTip1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "P-GEN";
+            // 
             // GeneratePasswords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(770, 510);
+            this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GeneratePasswords";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Generate Passwords";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDNumInput)).EndInit();

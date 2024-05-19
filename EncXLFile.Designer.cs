@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EncXLFile));
             this.labelImg = new System.Windows.Forms.Label();
             this.BtnExit = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@
             this.BtnShowPWD2 = new System.Windows.Forms.Label();
             this.BtnHidePWD1 = new System.Windows.Forms.Label();
             this.BtnHidePWD2 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // labelImg
@@ -114,6 +116,7 @@
             this.TbEncPwd2.Size = new System.Drawing.Size(259, 22);
             this.TbEncPwd2.TabIndex = 26;
             this.TbEncPwd2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TbEncPwd2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TbEncPwd2_MouseDown);
             // 
             // TbEncPwd1
             // 
@@ -124,6 +127,7 @@
             this.TbEncPwd1.Size = new System.Drawing.Size(259, 22);
             this.TbEncPwd1.TabIndex = 25;
             this.TbEncPwd1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TbEncPwd1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TbEncPwd1_MouseDown);
             // 
             // BtnXLFileEnc
             // 
@@ -205,6 +209,13 @@
             this.BtnHidePWD2.Visible = false;
             this.BtnHidePWD2.Click += new System.EventHandler(this.BtnHidePWD2_Click_1);
             // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.Color.White;
+            this.toolTip1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "P-GEN";
+            // 
             // EncXLFile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -251,5 +262,6 @@
         private System.Windows.Forms.Label BtnShowPWD2;
         private System.Windows.Forms.Label BtnHidePWD1;
         private System.Windows.Forms.Label BtnHidePWD2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

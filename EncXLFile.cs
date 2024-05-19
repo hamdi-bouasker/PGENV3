@@ -138,5 +138,15 @@ namespace PGENV3
         {
             Close();
         }
+
+        private void TbEncPwd1_MouseDown(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("Minimum password length is 8 characters!", this.TbEncPwd1);
+        }
+
+        private void TbEncPwd2_MouseDown(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("Minimum password length is 8 characters!", this.TbEncPwd2);
+        }
     }
 }

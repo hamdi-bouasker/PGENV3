@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EncWordFile));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.BtnWordFileEnc = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@
             this.BtnHidePWD1 = new System.Windows.Forms.Button();
             this.BtnHidePWD2 = new System.Windows.Forms.Button();
             this.labelImg = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -85,6 +87,7 @@
             this.TbEncPwd1.Size = new System.Drawing.Size(259, 23);
             this.TbEncPwd1.TabIndex = 11;
             this.TbEncPwd1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TbEncPwd1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TbEncPwd1_MouseDown);
             // 
             // TbEncPwd2
             // 
@@ -96,6 +99,7 @@
             this.TbEncPwd2.Size = new System.Drawing.Size(259, 23);
             this.TbEncPwd2.TabIndex = 12;
             this.TbEncPwd2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TbEncPwd2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TbEncPwd2_MouseDown);
             // 
             // label2
             // 
@@ -211,6 +215,13 @@
             this.labelImg.TabIndex = 21;
             this.labelImg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.Color.White;
+            this.toolTip1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "P-GEN";
+            // 
             // EncWordFile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -257,5 +268,6 @@
         private System.Windows.Forms.Button BtnHidePWD1;
         private System.Windows.Forms.Button BtnHidePWD2;
         private System.Windows.Forms.Label labelImg;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
