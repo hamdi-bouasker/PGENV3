@@ -1,16 +1,21 @@
-﻿using System;
+﻿using Syncfusion.Pdf.Parsing;
+using Syncfusion.Pdf.Security;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Syncfusion.Pdf.Parsing;
-using Syncfusion.Pdf.Security;
-
 
 namespace PGENV3
 {
-    public partial class EncPDFFile : Form
+    public partial class MultiPDFEnc : Form
     {
-        public EncPDFFile()
+        public MultiPDFEnc()
         {
             InitializeComponent();
         }
@@ -64,31 +69,44 @@ namespace PGENV3
 
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
+            ofd.Multiselect = true;
+            var tasks = new List<Task>();
 
             if (TbEncPwd1.Text == TbEncPwd2.Text && ofd.ShowDialog() == DialogResult.OK)
             {
+                progressBar1.Visible = true;
 
                 try
                 {
-                    if (gte.GetFileExtension(ofd.FileName) == ".pdf")
+                    foreach (string file in ofd.FileNames)
                     {
-                        LblProceeding.Text = "Proceeding... Do not exit the software!";
-                        var task = Task.Run(() => EncryptPDFFile(ofd.FileName)).ContinueWith(t => File.Delete(ofd.FileName));
-                        await task;
-                        if (task.IsCompleted)
+                        if (gte.GetFileExtension(file) != ".pdf")
                         {
-                            LblProceeding.Text = "Done!";
-                            MessageBox.Show("File Successfully Encrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LblProceeding.ResetText();
+                            MessageBox.Show("Please select PDF files only!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
                         }
 
+                        if (gte.GetFileExtension(file) == ".pdf")
+                        {                           
+                            LblProceeding.Text = "Proceeding... Do not exit the software!";
+                            var task = Task.Run(() => EncryptPDFFile(file)).ContinueWith(t => File.Delete(file)).ContinueWith(p => progressBar1.PerformStep());
+                            tasks.Add(task);                            
+                        }
                     }
+
+                    await Task.WhenAll(tasks);
+                    LblProceeding.Text = "Done!";
+                    MessageBox.Show("Files Successfully Encrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LblProceeding.ResetText();
+                    progressBar1.Visible = false;
+
                 }
 
                 catch (Exception)
                 {
                     LblProceeding.ResetText();
-                    MessageBox.Show("Error: Ensure the password is correct!" + '\n' + '\n' + "Ensure the file you want to decrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error: Ensure the password is correct!" + '\n' + '\n' + "Ensure the file you want to encrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -107,18 +125,18 @@ namespace PGENV3
             TbEncPwd1.PasswordChar = '\0';
         }
 
-        private void BtnShowPWD2_Click(object sender, EventArgs e)
-        {
-            BtnHidePWD2.Visible = true;
-            BtnShowPWD2.Visible = false;
-            TbEncPwd2.PasswordChar = '\0';
-        }
-
         private void BtnHidePWD1_Click(object sender, EventArgs e)
         {
             BtnShowPWD1.Visible = true;
             BtnHidePWD1.Visible = false;
             TbEncPwd1.PasswordChar = '*';
+        }
+
+        private void BtnShowPWD2_Click(object sender, EventArgs e)
+        {
+            BtnHidePWD2.Visible = true;
+            BtnShowPWD2.Visible = false;
+            TbEncPwd2.PasswordChar = '\0';
         }
 
         private void BtnHidePWD2_Click(object sender, EventArgs e)
@@ -135,12 +153,12 @@ namespace PGENV3
 
         private void TbEncPwd1_MouseDown(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Minimum password length is 8 characters!", this.TbEncPwd1);
+            toolTip1.Show("Minimum password length is 8 characters!", TbEncPwd1);
         }
 
         private void TbEncPwd2_MouseDown(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Minimum password length is 8 characters!", this.TbEncPwd2);
+            toolTip1.Show("Minimum password length is 8 characters!", TbEncPwd2);
         }
     }
 }

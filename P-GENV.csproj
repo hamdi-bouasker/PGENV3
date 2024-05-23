@@ -187,6 +187,24 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MultiPDFEnc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultiPDFEnc.Designer.cs">
+      <DependentUpon>MultiPDFEnc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultipleWordEnc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultipleWordEnc.Designer.cs">
+      <DependentUpon>MultipleWordEnc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultipleXLEnc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultipleXLEnc.Designer.cs">
+      <DependentUpon>MultipleXLEnc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutBox1.resx">
@@ -221,6 +239,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultiPDFEnc.resx">
+      <DependentUpon>MultiPDFEnc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultipleWordEnc.resx">
+      <DependentUpon>MultipleWordEnc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultipleXLEnc.resx">
+      <DependentUpon>MultipleXLEnc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

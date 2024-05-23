@@ -1,6 +1,6 @@
 ﻿namespace PGENV3
 {
-    partial class EncPDFFile
+    partial class MultiPDFEnc
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EncPDFFile));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MultiPDFEnc));
             this.labelImg = new System.Windows.Forms.Label();
             this.BtnHidePWD2 = new System.Windows.Forms.Button();
             this.BtnHidePWD1 = new System.Windows.Forms.Button();
-            this.BtnShowPWD2 = new System.Windows.Forms.Button();
-            this.BtnShowPWD1 = new System.Windows.Forms.Button();
             this.BtnExit = new System.Windows.Forms.Button();
             this.LblProceeding = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,6 +41,10 @@
             this.TbEncPwd1 = new System.Windows.Forms.TextBox();
             this.BtnPDFFileEnc = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.BtnShowPWD1 = new System.Windows.Forms.Button();
+            this.BtnShowPWD2 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
@@ -51,11 +53,11 @@
             this.labelImg.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelImg.ForeColor = System.Drawing.Color.White;
             this.labelImg.Image = ((System.Drawing.Image)(resources.GetObject("labelImg.Image")));
-            this.labelImg.Location = new System.Drawing.Point(307, 61);
+            this.labelImg.Location = new System.Drawing.Point(303, 46);
             this.labelImg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelImg.Name = "labelImg";
             this.labelImg.Size = new System.Drawing.Size(74, 53);
-            this.labelImg.TabIndex = 34;
+            this.labelImg.TabIndex = 45;
             this.labelImg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BtnHidePWD2
@@ -64,10 +66,10 @@
             this.BtnHidePWD2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnHidePWD2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(26)))));
             this.BtnHidePWD2.Image = ((System.Drawing.Image)(resources.GetObject("BtnHidePWD2.Image")));
-            this.BtnHidePWD2.Location = new System.Drawing.Point(180, 311);
+            this.BtnHidePWD2.Location = new System.Drawing.Point(176, 270);
             this.BtnHidePWD2.Name = "BtnHidePWD2";
             this.BtnHidePWD2.Size = new System.Drawing.Size(35, 24);
-            this.BtnHidePWD2.TabIndex = 33;
+            this.BtnHidePWD2.TabIndex = 44;
             this.BtnHidePWD2.UseVisualStyleBackColor = true;
             this.BtnHidePWD2.Visible = false;
             this.BtnHidePWD2.Click += new System.EventHandler(this.BtnHidePWD2_Click);
@@ -78,49 +80,23 @@
             this.BtnHidePWD1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnHidePWD1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(26)))));
             this.BtnHidePWD1.Image = ((System.Drawing.Image)(resources.GetObject("BtnHidePWD1.Image")));
-            this.BtnHidePWD1.Location = new System.Drawing.Point(181, 211);
+            this.BtnHidePWD1.Location = new System.Drawing.Point(177, 170);
             this.BtnHidePWD1.Name = "BtnHidePWD1";
             this.BtnHidePWD1.Size = new System.Drawing.Size(35, 24);
-            this.BtnHidePWD1.TabIndex = 32;
+            this.BtnHidePWD1.TabIndex = 43;
             this.BtnHidePWD1.UseVisualStyleBackColor = true;
             this.BtnHidePWD1.Visible = false;
             this.BtnHidePWD1.Click += new System.EventHandler(this.BtnHidePWD1_Click);
-            // 
-            // BtnShowPWD2
-            // 
-            this.BtnShowPWD2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnShowPWD2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnShowPWD2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(26)))));
-            this.BtnShowPWD2.Image = ((System.Drawing.Image)(resources.GetObject("BtnShowPWD2.Image")));
-            this.BtnShowPWD2.Location = new System.Drawing.Point(486, 310);
-            this.BtnShowPWD2.Name = "BtnShowPWD2";
-            this.BtnShowPWD2.Size = new System.Drawing.Size(35, 24);
-            this.BtnShowPWD2.TabIndex = 31;
-            this.BtnShowPWD2.UseVisualStyleBackColor = true;
-            this.BtnShowPWD2.Click += new System.EventHandler(this.BtnShowPWD2_Click);
-            // 
-            // BtnShowPWD1
-            // 
-            this.BtnShowPWD1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnShowPWD1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnShowPWD1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(26)))));
-            this.BtnShowPWD1.Image = ((System.Drawing.Image)(resources.GetObject("BtnShowPWD1.Image")));
-            this.BtnShowPWD1.Location = new System.Drawing.Point(485, 211);
-            this.BtnShowPWD1.Name = "BtnShowPWD1";
-            this.BtnShowPWD1.Size = new System.Drawing.Size(35, 24);
-            this.BtnShowPWD1.TabIndex = 30;
-            this.BtnShowPWD1.UseVisualStyleBackColor = true;
-            this.BtnShowPWD1.Click += new System.EventHandler(this.BtnShowPWD1_Click);
             // 
             // BtnExit
             // 
             this.BtnExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(26)))));
-            this.BtnExit.Location = new System.Drawing.Point(218, 526);
+            this.BtnExit.Location = new System.Drawing.Point(214, 507);
             this.BtnExit.Margin = new System.Windows.Forms.Padding(4);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(259, 44);
-            this.BtnExit.TabIndex = 29;
+            this.BtnExit.TabIndex = 42;
             this.BtnExit.Text = "Exit";
             this.BtnExit.UseVisualStyleBackColor = true;
             this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
@@ -129,22 +105,22 @@
             // 
             this.LblProceeding.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblProceeding.ForeColor = System.Drawing.Color.White;
-            this.LblProceeding.Location = new System.Drawing.Point(188, 461);
+            this.LblProceeding.Location = new System.Drawing.Point(184, 402);
             this.LblProceeding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblProceeding.Name = "LblProceeding";
             this.LblProceeding.Size = new System.Drawing.Size(321, 28);
-            this.LblProceeding.TabIndex = 28;
+            this.LblProceeding.TabIndex = 41;
             this.LblProceeding.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(220, 252);
+            this.label3.Location = new System.Drawing.Point(216, 211);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(264, 41);
-            this.label3.TabIndex = 27;
+            this.label3.TabIndex = 40;
             this.label3.Text = "Repeat Password";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -152,33 +128,33 @@
             // 
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(220, 152);
+            this.label2.Location = new System.Drawing.Point(216, 111);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(259, 41);
-            this.label2.TabIndex = 26;
+            this.label2.TabIndex = 39;
             this.label2.Text = "Enter Password";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TbEncPwd2
             // 
             this.TbEncPwd2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(26)))));
-            this.TbEncPwd2.Location = new System.Drawing.Point(221, 312);
+            this.TbEncPwd2.Location = new System.Drawing.Point(217, 271);
             this.TbEncPwd2.Name = "TbEncPwd2";
             this.TbEncPwd2.PasswordChar = '*';
             this.TbEncPwd2.Size = new System.Drawing.Size(259, 23);
-            this.TbEncPwd2.TabIndex = 25;
+            this.TbEncPwd2.TabIndex = 38;
             this.TbEncPwd2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TbEncPwd2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TbEncPwd2_MouseDown);
             // 
             // TbEncPwd1
             // 
             this.TbEncPwd1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(26)))));
-            this.TbEncPwd1.Location = new System.Drawing.Point(221, 212);
+            this.TbEncPwd1.Location = new System.Drawing.Point(217, 171);
             this.TbEncPwd1.Name = "TbEncPwd1";
             this.TbEncPwd1.PasswordChar = '*';
             this.TbEncPwd1.Size = new System.Drawing.Size(259, 23);
-            this.TbEncPwd1.TabIndex = 24;
+            this.TbEncPwd1.TabIndex = 37;
             this.TbEncPwd1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TbEncPwd1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TbEncPwd1_MouseDown);
             // 
@@ -186,12 +162,12 @@
             // 
             this.BtnPDFFileEnc.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPDFFileEnc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(26)))));
-            this.BtnPDFFileEnc.Location = new System.Drawing.Point(220, 373);
+            this.BtnPDFFileEnc.Location = new System.Drawing.Point(216, 332);
             this.BtnPDFFileEnc.Margin = new System.Windows.Forms.Padding(4);
             this.BtnPDFFileEnc.Name = "BtnPDFFileEnc";
             this.BtnPDFFileEnc.Size = new System.Drawing.Size(259, 44);
-            this.BtnPDFFileEnc.TabIndex = 23;
-            this.BtnPDFFileEnc.Text = "Select a file";
+            this.BtnPDFFileEnc.TabIndex = 36;
+            this.BtnPDFFileEnc.Text = "Select the files";
             this.BtnPDFFileEnc.UseVisualStyleBackColor = true;
             this.BtnPDFFileEnc.Click += new System.EventHandler(this.BtnPDFFileEnc_Click);
             // 
@@ -200,32 +176,67 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(246, 16);
+            this.label1.Location = new System.Drawing.Point(242, 1);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(220, 41);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Encrypt PDF File";
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Encrypt PDF Files";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // toolTip1
+            // progressBar1
             // 
-            this.toolTip1.BackColor = System.Drawing.Color.White;
-            this.toolTip1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "P-GEN";
+            this.progressBar1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.progressBar1.Location = new System.Drawing.Point(184, 460);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(321, 28);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 46;
+            this.progressBar1.Visible = false;
             // 
-            // EncPDFFile
+            // BtnShowPWD1
+            // 
+            this.BtnShowPWD1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnShowPWD1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnShowPWD1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(26)))));
+            this.BtnShowPWD1.Image = ((System.Drawing.Image)(resources.GetObject("BtnShowPWD1.Image")));
+            this.BtnShowPWD1.Location = new System.Drawing.Point(482, 171);
+            this.BtnShowPWD1.Name = "BtnShowPWD1";
+            this.BtnShowPWD1.Size = new System.Drawing.Size(35, 24);
+            this.BtnShowPWD1.TabIndex = 47;
+            this.BtnShowPWD1.UseVisualStyleBackColor = true;
+            this.BtnShowPWD1.Click += new System.EventHandler(this.BtnShowPWD1_Click);
+            // 
+            // BtnShowPWD2
+            // 
+            this.BtnShowPWD2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnShowPWD2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnShowPWD2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(26)))));
+            this.BtnShowPWD2.Image = ((System.Drawing.Image)(resources.GetObject("BtnShowPWD2.Image")));
+            this.BtnShowPWD2.Location = new System.Drawing.Point(482, 271);
+            this.BtnShowPWD2.Name = "BtnShowPWD2";
+            this.BtnShowPWD2.Size = new System.Drawing.Size(35, 24);
+            this.BtnShowPWD2.TabIndex = 48;
+            this.BtnShowPWD2.UseVisualStyleBackColor = true;
+            this.BtnShowPWD2.Click += new System.EventHandler(this.BtnShowPWD2_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Multiselect = true;
+            // 
+            // MultiPDFEnc
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(700, 600);
+            this.ClientSize = new System.Drawing.Size(680, 557);
             this.ControlBox = false;
+            this.Controls.Add(this.BtnShowPWD2);
+            this.Controls.Add(this.BtnShowPWD1);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelImg);
             this.Controls.Add(this.BtnHidePWD2);
             this.Controls.Add(this.BtnHidePWD1);
-            this.Controls.Add(this.BtnShowPWD2);
-            this.Controls.Add(this.BtnShowPWD1);
             this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.LblProceeding);
             this.Controls.Add(this.label3);
@@ -237,7 +248,8 @@
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "EncPDFFile";
+            this.Name = "MultiPDFEnc";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -249,8 +261,6 @@
         private System.Windows.Forms.Label labelImg;
         private System.Windows.Forms.Button BtnHidePWD2;
         private System.Windows.Forms.Button BtnHidePWD1;
-        private System.Windows.Forms.Button BtnShowPWD2;
-        private System.Windows.Forms.Button BtnShowPWD1;
         private System.Windows.Forms.Button BtnExit;
         private System.Windows.Forms.Label LblProceeding;
         private System.Windows.Forms.Label label3;
@@ -259,6 +269,10 @@
         private System.Windows.Forms.TextBox TbEncPwd1;
         private System.Windows.Forms.Button BtnPDFFileEnc;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Button BtnShowPWD1;
+        private System.Windows.Forms.Button BtnShowPWD2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolTip toolTip1;
     }
 }

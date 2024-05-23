@@ -81,5 +81,26 @@ namespace PGENV3
             aboutBox1.MdiParent = this;
             aboutBox1.Show();
         }
+
+        private void MenuItemMultipleWordEnc_Click(object sender, EventArgs e)
+        {
+            MultipleWordEnc multipleWordEnc = new MultipleWordEnc();
+            multipleWordEnc.MdiParent = this;
+            multipleWordEnc.Show();
+        }
+
+        private void MenuItemMultipleXLEnc_Click(object sender, EventArgs e)
+        {
+            MultipleXLEnc multipleXLEnc = new MultipleXLEnc();
+            multipleXLEnc.MdiParent = this;
+            multipleXLEnc.Show();
+        }
+
+        private void MenuItemMultiplePDFEnc_Click(object sender, EventArgs e)
+        {
+            MultiPDFEnc multiPDFEnc = new MultiPDFEnc();
+            multiPDFEnc.MdiParent = this;
+            multiPDFEnc.Show();
+        }
     }
 }

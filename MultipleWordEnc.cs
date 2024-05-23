@@ -1,16 +1,21 @@
-﻿using System;
+﻿using Syncfusion.DocIO.DLS;
+using Syncfusion.DocIO;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Syncfusion.DocIO.DLS;
-using Syncfusion.DocIO;
-
 
 namespace PGENV3
 {
-    public partial class EncWordFile : Form
+    public partial class MultipleWordEnc : Form
     {
-        public EncWordFile()
+        public MultipleWordEnc()
         {
             InitializeComponent();
         }
@@ -18,7 +23,7 @@ namespace PGENV3
         GetPathOrExtention gte = new GetPathOrExtention();
         private void EncryptDOCXFile(string fileName)
         {
-            
+
             // Load an existing Word document.
             FileStream inputStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
 
@@ -29,7 +34,7 @@ namespace PGENV3
 
             // Save the encrypted Word document.
             FileStream outputStream = new FileStream(gte.GetDirPath(fileName) + "\\Encrypted-" + gte.GetfileName(fileName), FileMode.Create, FileAccess.Write);
-            
+
             document.Save(outputStream, FormatType.Docx);
             inputStream.Close();
             outputStream.Close();
@@ -57,41 +62,44 @@ namespace PGENV3
 
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "docx files (*.docx)|*.docx|All files (*.*)|*.*";
+            ofd.Multiselect = true;
+            var tasks = new List<Task>();
 
             if (TbEncPwd1.Text == TbEncPwd2.Text && ofd.ShowDialog() == DialogResult.OK)
             {
+                progressBar1.Visible = true;
 
                 try
-                {
-                    if (gte.GetFileExtension(ofd.FileName) == ".docx")
+                {   
+                    foreach (string file in ofd.FileNames)
                     {
-                        LblProceeding.Text = "Proceeding... Do not exit the software!";
-                        var task = Task.Run(() => EncryptDOCXFile(ofd.FileName)).ContinueWith(t => File.Delete(ofd.FileName));
-                        await task;
-                        
-                        if (task.IsCompleted)
+                        if (gte.GetFileExtension(file) != ".docx")
                         {
-                            LblProceeding.Text = "Done!";
-                            MessageBox.Show("File Successfully Encrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LblProceeding.ResetText();
+                            MessageBox.Show("File version is not supported!" + '\n' + '\n' + "Only Word version 2019 and above are supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
                         }
 
+                        if (gte.GetFileExtension(file) == ".docx")
+                        {
+                            LblProceeding.Text = "Proceeding... Do not exit the software!";
+                            var task = Task.Run(() => EncryptDOCXFile(file)).ContinueWith(t => File.Delete(file)).ContinueWith(p => progressBar1.PerformStep());
+                            tasks.Add(task);                           
+                        }                        
                     }
 
-                    if (gte.GetFileExtension(ofd.FileName) != ".docx")
-                    {
-                        LblProceeding.ResetText();
-                        MessageBox.Show("File version is not supported!" + '\n' + '\n' + "Only Word version 2019 and above are supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
+                    await Task.WhenAll(tasks);
+                    LblProceeding.Text = "Done!";
+                    MessageBox.Show("Files Successfully Encrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LblProceeding.ResetText();     
+                    progressBar1.Visible= false;
 
                 }
 
                 catch (Exception)
                 {
                     LblProceeding.ResetText();
-                    MessageBox.Show("Error: Ensure the file you want to enccrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error: Ensure the files you want to enccrypt are not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);                    
                     return;
                 }
 
@@ -101,7 +109,6 @@ namespace PGENV3
         private void BtnWordFileEnc_Click(object sender, EventArgs e)
         {
             _ = EncwordFile();
-            
         }
 
         private void BtnShowPWD1_Click(object sender, EventArgs e)
@@ -139,12 +146,12 @@ namespace PGENV3
 
         private void TbEncPwd1_MouseDown(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Minimum password length is 8 characters!", this.TbEncPwd1);
+            toolTip1.Show("Minimum password length is 8 characters!", TbEncPwd1);
         }
 
         private void TbEncPwd2_MouseDown(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Minimum password length is 8 characters!", this.TbEncPwd2);
+            toolTip1.Show("Minimum password length is 8 characters!", TbEncPwd2);
         }
     }
 }

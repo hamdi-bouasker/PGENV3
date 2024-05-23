@@ -1,14 +1,20 @@
 ﻿using Syncfusion.XlsIO;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PGENV3
 {
-    public partial class EncXLFile : Form
+    public partial class MultipleXLEnc : Form
     {
-        public EncXLFile()
+        public MultipleXLEnc()
         {
             InitializeComponent();
         }
@@ -45,7 +51,7 @@ namespace PGENV3
 
         }
 
-        private async Task EncryptXLFile()
+        private async Task EncXLFiles()
         {
             if (TbEncPwd1.Text != TbEncPwd2.Text)
             {
@@ -67,34 +73,38 @@ namespace PGENV3
 
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "xlsx files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            ofd.Multiselect = true;
+            var tasks = new List<Task>();
 
             if (TbEncPwd1.Text == TbEncPwd2.Text && ofd.ShowDialog() == DialogResult.OK)
             {
+                progressBar1.Visible = true;
 
                 try
                 {
-                    if (gte.GetFileExtension(ofd.FileName) == ".xlsx")
+                    foreach (string file in ofd.FileNames)
                     {
-                        LblProceeding.Text = "Proceeding... Do not exit the software!";
-                        var task = Task.Run(() => EncryptXLFile(ofd.FileName)).ContinueWith(t => File.Delete(ofd.FileName));
-                        await task;
-                        if (task.IsCompleted)
+                        if (gte.GetFileExtension(file) != ".xlsx")
                         {
-                            LblProceeding.Text = "Done!";
-                            MessageBox.Show("File Successfully Encrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LblProceeding.ResetText();
+                            MessageBox.Show("File version is not supported!" + '\n' + '\n' + "Only Excel version 2019 and above are supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
                         }
 
+                        if (gte.GetFileExtension(file) == ".xlsx")
+                        {
+                            LblProceeding.Text = "Proceeding... Do not exit the software!";
+                            var task = Task.Run(() => EncryptXLFile(file)).ContinueWith(t => File.Delete(file)).ContinueWith(p => progressBar1.PerformStep());
+                            tasks.Add(task);
+                        }                   
                     }
 
-                    if (gte.GetFileExtension(ofd.FileName) != ".xlsx")
-                    {
-                        LblProceeding.ResetText();
-                        MessageBox.Show("File version is not supported!" + '\n' + '\n' + "Only Excel version 2019 and above are supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    await Task.WhenAll(tasks);
+                    LblProceeding.Text = "Done!";
+                    MessageBox.Show("Files Successfully Encrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LblProceeding.ResetText();
+                    progressBar1.Visible = false;
 
-                    
                 }
 
                 catch (Exception ex)
@@ -103,56 +113,55 @@ namespace PGENV3
                     MessageBox.Show("Error occured! Maybe the file is already encrypted?!" + '\n' + '\n' + ex.Message, "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
             }
         }
 
         private void BtnXLFileEnc_Click(object sender, EventArgs e)
         {
-            _ = EncryptXLFile();
+            _ = EncXLFiles();
         }
 
-        private void BtnShowPWD1_Click_1(object sender, EventArgs e)
+        private void BtnShowPWD1_Click(object sender, EventArgs e)
         {
             BtnShowPWD1.Visible = false;
             BtnHidePWD1.Visible = true;
             TbEncPwd1.PasswordChar = '\0';
         }
 
-        private void BtnShowPWD2_Click_1(object sender, EventArgs e)
-        {
-            BtnHidePWD2.Visible = true;
-            BtnShowPWD2.Visible = false;
-            TbEncPwd2.PasswordChar = '\0';
-        }
-
-        private void BtnHidePWD1_Click_1(object sender, EventArgs e)
+        private void BtnHidePWD1_Click(object sender, EventArgs e)
         {
             BtnShowPWD1.Visible = true;
             BtnHidePWD1.Visible = false;
             TbEncPwd1.PasswordChar = '*';
         }
 
-        private void BtnHidePWD2_Click_1(object sender, EventArgs e)
+        private void BtnShowPWD2_Click(object sender, EventArgs e)
+        {
+            BtnHidePWD2.Visible = true;
+            BtnShowPWD2.Visible = false;
+            TbEncPwd2.PasswordChar = '\0';
+        }
+
+        private void BtnHidePWD2_Click(object sender, EventArgs e)
         {
             BtnHidePWD2.Visible = false;
             BtnShowPWD2.Visible = true;
             TbEncPwd2.PasswordChar = '*';
         }
 
-        private void BtnExit_Click_1(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
             Close();
         }
 
         private void TbEncPwd1_MouseDown(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Minimum password length is 8 characters!", this.TbEncPwd1);
+            toolTip1.Show("Minimum password length is 8 characters!", TbEncPwd1);
         }
 
         private void TbEncPwd2_MouseDown(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Minimum password length is 8 characters!", this.TbEncPwd2);
+            toolTip1.Show("Minimum password length is 8 characters!", TbEncPwd2);
         }
     }
 }

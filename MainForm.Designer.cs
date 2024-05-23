@@ -37,14 +37,21 @@
             this.EncWordFile = new System.Windows.Forms.ToolStripMenuItem();
             this.EncExcelFile = new System.Windows.Forms.ToolStripMenuItem();
             this.EncPDFFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.encryptMultipleFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemMultipleWordEnc = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemMultipleXLEnc = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemMultiplePDFEnc = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnAbout = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.DecFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemDecWordFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemDecXLFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemDecPDFFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.decryptMultipleFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wordToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.excelToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pDFToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +65,6 @@
             this.toolStripSeparator1,
             this.toolStripButton2,
             this.toolStripSeparator2,
-            this.toolStripSeparator4,
             this.BtnAbout,
             this.toolStripButton3});
             this.toolStrip1.Name = "toolStrip1";
@@ -77,7 +83,8 @@
             // toolStripButton2
             // 
             this.toolStripButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.EncFileMenuItem});
+            this.EncFileMenuItem,
+            this.encryptMultipleFilesToolStripMenuItem});
             resources.ApplyResources(this.toolStripButton2, "toolStripButton2");
             this.toolStripButton2.Name = "toolStripButton2";
             // 
@@ -108,16 +115,37 @@
             resources.ApplyResources(this.EncPDFFile, "EncPDFFile");
             this.EncPDFFile.Click += new System.EventHandler(this.EncPDFFile_Click);
             // 
+            // encryptMultipleFilesToolStripMenuItem
+            // 
+            this.encryptMultipleFilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemMultipleWordEnc,
+            this.MenuItemMultipleXLEnc,
+            this.MenuItemMultiplePDFEnc});
+            this.encryptMultipleFilesToolStripMenuItem.Name = "encryptMultipleFilesToolStripMenuItem";
+            resources.ApplyResources(this.encryptMultipleFilesToolStripMenuItem, "encryptMultipleFilesToolStripMenuItem");
+            // 
+            // MenuItemMultipleWordEnc
+            // 
+            this.MenuItemMultipleWordEnc.Name = "MenuItemMultipleWordEnc";
+            resources.ApplyResources(this.MenuItemMultipleWordEnc, "MenuItemMultipleWordEnc");
+            this.MenuItemMultipleWordEnc.Click += new System.EventHandler(this.MenuItemMultipleWordEnc_Click);
+            // 
+            // MenuItemMultipleXLEnc
+            // 
+            this.MenuItemMultipleXLEnc.Name = "MenuItemMultipleXLEnc";
+            resources.ApplyResources(this.MenuItemMultipleXLEnc, "MenuItemMultipleXLEnc");
+            this.MenuItemMultipleXLEnc.Click += new System.EventHandler(this.MenuItemMultipleXLEnc_Click);
+            // 
+            // MenuItemMultiplePDFEnc
+            // 
+            this.MenuItemMultiplePDFEnc.Name = "MenuItemMultiplePDFEnc";
+            resources.ApplyResources(this.MenuItemMultiplePDFEnc, "MenuItemMultiplePDFEnc");
+            this.MenuItemMultiplePDFEnc.Click += new System.EventHandler(this.MenuItemMultiplePDFEnc_Click);
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             // 
             // BtnAbout
             // 
@@ -129,7 +157,8 @@
             // toolStripButton3
             // 
             this.toolStripButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.DecFileMenuItem});
+            this.DecFileMenuItem,
+            this.decryptMultipleFilesToolStripMenuItem});
             resources.ApplyResources(this.toolStripButton3, "toolStripButton3");
             this.toolStripButton3.Name = "toolStripButton3";
             // 
@@ -160,6 +189,30 @@
             resources.ApplyResources(this.MenuItemDecPDFFile, "MenuItemDecPDFFile");
             this.MenuItemDecPDFFile.Click += new System.EventHandler(this.MenuItemDecPDFFile_Click);
             // 
+            // decryptMultipleFilesToolStripMenuItem
+            // 
+            this.decryptMultipleFilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.wordToolStripMenuItem1,
+            this.excelToolStripMenuItem1,
+            this.pDFToolStripMenuItem1});
+            this.decryptMultipleFilesToolStripMenuItem.Name = "decryptMultipleFilesToolStripMenuItem";
+            resources.ApplyResources(this.decryptMultipleFilesToolStripMenuItem, "decryptMultipleFilesToolStripMenuItem");
+            // 
+            // wordToolStripMenuItem1
+            // 
+            this.wordToolStripMenuItem1.Name = "wordToolStripMenuItem1";
+            resources.ApplyResources(this.wordToolStripMenuItem1, "wordToolStripMenuItem1");
+            // 
+            // excelToolStripMenuItem1
+            // 
+            this.excelToolStripMenuItem1.Name = "excelToolStripMenuItem1";
+            resources.ApplyResources(this.excelToolStripMenuItem1, "excelToolStripMenuItem1");
+            // 
+            // pDFToolStripMenuItem1
+            // 
+            this.pDFToolStripMenuItem1.Name = "pDFToolStripMenuItem1";
+            resources.ApplyResources(this.pDFToolStripMenuItem1, "pDFToolStripMenuItem1");
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -186,7 +239,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton BtnAbout;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripDropDownButton toolStripButton2;
         private System.Windows.Forms.ToolStripMenuItem EncFileMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripButton3;
@@ -198,6 +250,14 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemDecXLFile;
         private System.Windows.Forms.ToolStripMenuItem MenuItemDecPDFFile;
         private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.ToolStripMenuItem encryptMultipleFilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemMultipleWordEnc;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemMultipleXLEnc;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemMultiplePDFEnc;
+        private System.Windows.Forms.ToolStripMenuItem decryptMultipleFilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wordToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem1;
     }
 }
 
