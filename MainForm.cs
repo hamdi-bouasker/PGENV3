@@ -102,5 +102,26 @@ namespace PGENV3
             multiPDFEnc.MdiParent = this;
             multiPDFEnc.Show();
         }
+
+        private void MenuItemMultipleWordDec_Click(object sender, EventArgs e)
+        {
+            MultiWordDec multiWordDec = new MultiWordDec(); 
+            multiWordDec.MdiParent = this;
+            multiWordDec.Show();
+        }
+
+        private void MenuItemMultipleXLDec_Click(object sender, EventArgs e)
+        {
+            MultiXLDec multiXLDec = new MultiXLDec();
+            multiXLDec.MdiParent = this;
+            multiXLDec.Show();
+        }
+
+        private void MenuItemMultiplePDFDec_Click(object sender, EventArgs e)
+        {
+            MultiPDFDec multiPDFDec = new MultiPDFDec();
+            multiPDFDec.MdiParent = this;
+            multiPDFDec.Show();
+        }
     }
 }

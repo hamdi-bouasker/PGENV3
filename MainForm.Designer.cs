@@ -49,9 +49,9 @@
             this.MenuItemDecXLFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemDecPDFFile = new System.Windows.Forms.ToolStripMenuItem();
             this.decryptMultipleFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.wordToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.excelToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pDFToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemMultipleWordDec = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemMultipleXLDec = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemMultiplePDFDec = new System.Windows.Forms.ToolStripMenuItem();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -192,26 +192,29 @@
             // decryptMultipleFilesToolStripMenuItem
             // 
             this.decryptMultipleFilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.wordToolStripMenuItem1,
-            this.excelToolStripMenuItem1,
-            this.pDFToolStripMenuItem1});
+            this.MenuItemMultipleWordDec,
+            this.MenuItemMultipleXLDec,
+            this.MenuItemMultiplePDFDec});
             this.decryptMultipleFilesToolStripMenuItem.Name = "decryptMultipleFilesToolStripMenuItem";
             resources.ApplyResources(this.decryptMultipleFilesToolStripMenuItem, "decryptMultipleFilesToolStripMenuItem");
             // 
-            // wordToolStripMenuItem1
+            // MenuItemMultipleWordDec
             // 
-            this.wordToolStripMenuItem1.Name = "wordToolStripMenuItem1";
-            resources.ApplyResources(this.wordToolStripMenuItem1, "wordToolStripMenuItem1");
+            this.MenuItemMultipleWordDec.Name = "MenuItemMultipleWordDec";
+            resources.ApplyResources(this.MenuItemMultipleWordDec, "MenuItemMultipleWordDec");
+            this.MenuItemMultipleWordDec.Click += new System.EventHandler(this.MenuItemMultipleWordDec_Click);
             // 
-            // excelToolStripMenuItem1
+            // MenuItemMultipleXLDec
             // 
-            this.excelToolStripMenuItem1.Name = "excelToolStripMenuItem1";
-            resources.ApplyResources(this.excelToolStripMenuItem1, "excelToolStripMenuItem1");
+            this.MenuItemMultipleXLDec.Name = "MenuItemMultipleXLDec";
+            resources.ApplyResources(this.MenuItemMultipleXLDec, "MenuItemMultipleXLDec");
+            this.MenuItemMultipleXLDec.Click += new System.EventHandler(this.MenuItemMultipleXLDec_Click);
             // 
-            // pDFToolStripMenuItem1
+            // MenuItemMultiplePDFDec
             // 
-            this.pDFToolStripMenuItem1.Name = "pDFToolStripMenuItem1";
-            resources.ApplyResources(this.pDFToolStripMenuItem1, "pDFToolStripMenuItem1");
+            this.MenuItemMultiplePDFDec.Name = "MenuItemMultiplePDFDec";
+            resources.ApplyResources(this.MenuItemMultiplePDFDec, "MenuItemMultiplePDFDec");
+            this.MenuItemMultiplePDFDec.Click += new System.EventHandler(this.MenuItemMultiplePDFDec_Click);
             // 
             // MainForm
             // 
@@ -255,9 +258,9 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemMultipleXLEnc;
         private System.Windows.Forms.ToolStripMenuItem MenuItemMultiplePDFEnc;
         private System.Windows.Forms.ToolStripMenuItem decryptMultipleFilesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem wordToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemMultipleWordDec;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemMultipleXLDec;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemMultiplePDFDec;
     }
 }
 
