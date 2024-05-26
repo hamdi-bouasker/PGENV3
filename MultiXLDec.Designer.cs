@@ -46,7 +46,7 @@
             // 
             this.BtnHidePWD1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
             this.BtnHidePWD1.Image = ((System.Drawing.Image)(resources.GetObject("BtnHidePWD1.Image")));
-            this.BtnHidePWD1.Location = new System.Drawing.Point(177, 187);
+            this.BtnHidePWD1.Location = new System.Drawing.Point(121, 187);
             this.BtnHidePWD1.Margin = new System.Windows.Forms.Padding(3);
             this.BtnHidePWD1.Name = "BtnHidePWD1";
             this.BtnHidePWD1.Size = new System.Drawing.Size(26, 33);
@@ -59,7 +59,7 @@
             // 
             this.BtnShowPWD1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
             this.BtnShowPWD1.Image = ((System.Drawing.Image)(resources.GetObject("BtnShowPWD1.Image")));
-            this.BtnShowPWD1.Location = new System.Drawing.Point(478, 189);
+            this.BtnShowPWD1.Location = new System.Drawing.Point(422, 189);
             this.BtnShowPWD1.Margin = new System.Windows.Forms.Padding(3);
             this.BtnShowPWD1.Name = "BtnShowPWD1";
             this.BtnShowPWD1.Size = new System.Drawing.Size(26, 33);
@@ -72,7 +72,7 @@
             this.labelImg.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelImg.ForeColor = System.Drawing.Color.White;
             this.labelImg.Image = ((System.Drawing.Image)(resources.GetObject("labelImg.Image")));
-            this.labelImg.Location = new System.Drawing.Point(293, 52);
+            this.labelImg.Location = new System.Drawing.Point(237, 52);
             this.labelImg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelImg.Name = "labelImg";
             this.labelImg.Size = new System.Drawing.Size(74, 53);
@@ -83,7 +83,7 @@
             // 
             this.BtnExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
-            this.BtnExit.Location = new System.Drawing.Point(207, 491);
+            this.BtnExit.Location = new System.Drawing.Point(151, 531);
             this.BtnExit.Margin = new System.Windows.Forms.Padding(4);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(259, 44);
@@ -96,7 +96,7 @@
             // 
             this.LblProceeding.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblProceeding.ForeColor = System.Drawing.Color.White;
-            this.LblProceeding.Location = new System.Drawing.Point(178, 381);
+            this.LblProceeding.Location = new System.Drawing.Point(122, 402);
             this.LblProceeding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblProceeding.Name = "LblProceeding";
             this.LblProceeding.Size = new System.Drawing.Size(321, 28);
@@ -107,7 +107,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(209, 134);
+            this.label2.Location = new System.Drawing.Point(153, 134);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(259, 41);
@@ -118,7 +118,7 @@
             // TbDecPwd1
             // 
             this.TbDecPwd1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
-            this.TbDecPwd1.Location = new System.Drawing.Point(210, 194);
+            this.TbDecPwd1.Location = new System.Drawing.Point(154, 194);
             this.TbDecPwd1.Name = "TbDecPwd1";
             this.TbDecPwd1.PasswordChar = '*';
             this.TbDecPwd1.Size = new System.Drawing.Size(259, 23);
@@ -129,7 +129,7 @@
             // 
             this.BtnXLFileDec.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnXLFileDec.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
-            this.BtnXLFileDec.Location = new System.Drawing.Point(207, 295);
+            this.BtnXLFileDec.Location = new System.Drawing.Point(151, 295);
             this.BtnXLFileDec.Margin = new System.Windows.Forms.Padding(4);
             this.BtnXLFileDec.Name = "BtnXLFileDec";
             this.BtnXLFileDec.Size = new System.Drawing.Size(259, 44);
@@ -143,7 +143,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(227, 8);
+            this.label1.Location = new System.Drawing.Point(171, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(237, 41);
@@ -154,7 +154,7 @@
             // progressBar1
             // 
             this.progressBar1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.progressBar1.Location = new System.Drawing.Point(180, 436);
+            this.progressBar1.Location = new System.Drawing.Point(124, 473);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(321, 28);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -170,7 +170,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(680, 557);
+            this.ClientSize = new System.Drawing.Size(581, 592);
             this.ControlBox = false;
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.BtnHidePWD1);
@@ -185,6 +185,8 @@
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "MultiXLDec";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();

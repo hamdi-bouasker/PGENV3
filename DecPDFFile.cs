@@ -17,20 +17,18 @@ namespace PGENV3
         GetPathOrExtention gte = new GetPathOrExtention();
 
         private void DecryptPDFFile(string fileName)
-        {
-            //Load the PDF document
+        {           
             FileStream docStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
             PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream, TbDecPwd1.Text);
-            //Change the user password
+            
             loadedDocument.Security.UserPassword = string.Empty;
 
-            FileStream outputFileStream = new FileStream(gte.GetDirPath(fileName) + "\\" + gte.GetfileName(fileName).Replace("Encrypted-", ""), FileMode.Create, FileAccess.Write);
-            //Save the PDF document to file stream.
+            FileStream outputFileStream = new FileStream(gte.GetDirPath(fileName) + "\\" + gte.GetfileName(fileName).Replace("Encrypted-", ""), FileMode.Create, FileAccess.Write);           
 
             loadedDocument.Save(outputFileStream);
-            //Close the document
+      
             docStream.Close();
-            loadedDocument.Close(true);
+            loadedDocument.Close();
             outputFileStream.Close();
         }
 
@@ -44,6 +42,7 @@ namespace PGENV3
 
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
+            ofd.Multiselect = false;
 
             if (TbDecPwd1.Text != "" && ofd.ShowDialog() == DialogResult.OK)
             {

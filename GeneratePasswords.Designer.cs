@@ -64,7 +64,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(286, 510);
+            this.panel1.Size = new System.Drawing.Size(286, 502);
             this.panel1.TabIndex = 0;
             // 
             // BtnExit
@@ -232,17 +232,17 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(286, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(484, 510);
+            this.panel2.Size = new System.Drawing.Size(353, 502);
             this.panel2.TabIndex = 1;
             // 
             // LblProceeding
             // 
             this.LblProceeding.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblProceeding.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.LblProceeding.Location = new System.Drawing.Point(29, 449);
+            this.LblProceeding.Location = new System.Drawing.Point(18, 455);
             this.LblProceeding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblProceeding.Name = "LblProceeding";
-            this.LblProceeding.Size = new System.Drawing.Size(439, 28);
+            this.LblProceeding.Size = new System.Drawing.Size(307, 28);
             this.LblProceeding.TabIndex = 16;
             this.LblProceeding.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -250,12 +250,12 @@
             // 
             this.pwdOutput.BackColor = System.Drawing.Color.MidnightBlue;
             this.pwdOutput.ForeColor = System.Drawing.Color.White;
-            this.pwdOutput.Location = new System.Drawing.Point(18, 39);
+            this.pwdOutput.Location = new System.Drawing.Point(18, 61);
             this.pwdOutput.Multiline = true;
             this.pwdOutput.Name = "pwdOutput";
             this.pwdOutput.ReadOnly = true;
             this.pwdOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.pwdOutput.Size = new System.Drawing.Size(450, 353);
+            this.pwdOutput.Size = new System.Drawing.Size(307, 353);
             this.pwdOutput.TabIndex = 1;
             this.pwdOutput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.pwdOutput.Visible = false;
@@ -271,7 +271,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 510);
+            this.ClientSize = new System.Drawing.Size(639, 502);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -281,6 +281,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GeneratePasswords";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

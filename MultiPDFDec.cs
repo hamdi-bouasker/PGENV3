@@ -1,12 +1,7 @@
 ﻿using Syncfusion.Pdf.Parsing;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,22 +17,18 @@ namespace PGENV3
         GetPathOrExtention gte = new GetPathOrExtention();
         private void DecryptPDFFiles(string fileName)
         {
-            //Load the PDF document
             FileStream docStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
             PdfLoadedDocument loadedDocument = new PdfLoadedDocument(docStream, TbDecPwd1.Text);
-            //Change the user password
+           
             loadedDocument.Security.UserPassword = string.Empty;
 
             FileStream outputFileStream = new FileStream(gte.GetDirPath(fileName) + "\\" + gte.GetfileName(fileName).Replace("Encrypted-", ""), FileMode.Create, FileAccess.Write);
-            //Save the PDF document to file stream.
-
-            loadedDocument.Save(outputFileStream);
-            //Close the document
+           
+            loadedDocument.Save(outputFileStream);          
             docStream.Close();
             loadedDocument.Close(true);
             outputFileStream.Close();
         }
-
         private async Task DecPDFfiles()
         {
             if (TbDecPwd1.Text == "")
@@ -85,31 +76,27 @@ namespace PGENV3
                 catch (Exception)
                 {
                     LblProceeding.ResetText();
-                    MessageBox.Show("Error: Ensure the password is correct!" + '\n' + '\n' + "Ensure the file you want to decrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the files you want to encrypt are not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
         }
-
         private void BtnPDFFileDec_Click(object sender, EventArgs e)
         {
             _ = DecPDFfiles();
         }
-
         private void BtnShowPWD1_Click(object sender, EventArgs e)
         {
             BtnShowPWD1.Visible = false;
             BtnHidePWD1.Visible = true;
             TbDecPwd1.PasswordChar = '\0';
         }
-
         private void BtnHidePWD1_Click(object sender, EventArgs e)
         {
             BtnShowPWD1.Visible = true;
             BtnHidePWD1.Visible = false;
             TbDecPwd1.PasswordChar = '*';
         }
-
         private void BtnExit_Click(object sender, EventArgs e)
         {
             Close();

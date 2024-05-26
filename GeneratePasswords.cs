@@ -11,19 +11,17 @@ namespace PGENV3
         {
             InitializeComponent();
         }
-
         private void BtnGeneratePWD_Click(object sender, EventArgs e)
         {
             int length = int.Parse(NUDCharsInput.Text);
             int num = int.Parse(NUDNumInput.Text);
             pwdOutput.Clear();
             LblProceeding.ResetText();
+
             try
-            {
-                
+            {               
                 for (int i = 0; i < num; i++)
                 {
-
                     string password = Membership.GeneratePassword(length, length / 3).Replace('.', '?').Replace(';', '!').Replace(':', '#').Replace('_', '}');
                     pwdOutput.AppendText(password + Environment.NewLine);
                     LblProceeding.Text = "Done!";
@@ -55,7 +53,6 @@ namespace PGENV3
                 MessageBox.Show("There is no password to copy!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void BtnExportPWD_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -79,7 +76,6 @@ namespace PGENV3
                 MessageBox.Show("There is no passwords to export!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void BtnClearInputs_Click(object sender, EventArgs e)
         {
             NUDCharsInput.Value = NUDCharsInput.Minimum;
@@ -89,17 +85,14 @@ namespace PGENV3
             pwdOutput.Visible = false;
             MessageBox.Show("All inputs are reset!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
         private void NUDCharsInput_MouseDown(object sender, MouseEventArgs e)
         {
             toolTip1.Show("Minimum is 12 and Maximum is 96!", this.NUDCharsInput);
         }
-
         private void NUDNumInput_MouseDown(object sender, MouseEventArgs e)
         {
             toolTip1.Show("Minimum is 1 and Maximum is 96!", this.NUDNumInput);
         }
-
         private void BtnExit_Click(object sender, EventArgs e)
         {
             Close();

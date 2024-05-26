@@ -2,12 +2,7 @@
 using Syncfusion.Pdf.Security;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,32 +16,27 @@ namespace PGENV3
         }
 
         GetPathOrExtention gte = new GetPathOrExtention();
-
         private void EncryptPDFFile(string fileName)
         {
-            //Load the PDF document.
             FileStream docStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
             PdfLoadedDocument document = new PdfLoadedDocument(docStream);
 
-            //Document security.
             PdfSecurity security = document.Security;
-            //Specifies key size and encryption algorithm.
+            
             security.KeySize = PdfEncryptionKeySize.Key256Bit;
             security.Algorithm = PdfEncryptionAlgorithm.AES;
-            //Specifies encryption option.
+          
             security.EncryptionOptions = PdfEncryptionOptions.EncryptAllContents;
             security.OwnerPassword = TbEncPwd2.Text;
             security.UserPassword = TbEncPwd2.Text;
 
             FileStream outputFileStream = new FileStream(gte.GetDirPath(fileName) + "\\Encrypted-" + gte.GetfileName(fileName), FileMode.Create, FileAccess.ReadWrite);
 
-            //Save the PDF document to file stream.
-            document.Save(outputFileStream);
-            document.Close(true);
+            document.Save(outputFileStream);           
             docStream.Close();
             outputFileStream.Close();
+            document.Close();
         }
-
         private async Task EncPDFfile()
         {
             if (TbEncPwd1.Text != TbEncPwd2.Text)
@@ -100,62 +90,52 @@ namespace PGENV3
                     MessageBox.Show("Files Successfully Encrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LblProceeding.ResetText();
                     progressBar1.Visible = false;
-
                 }
 
                 catch (Exception)
                 {
                     LblProceeding.ResetText();
-                    MessageBox.Show("Error: Ensure the password is correct!" + '\n' + '\n' + "Ensure the file you want to encrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the files you want to encrypt are not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
             }
         }
-
         private void BtnPDFFileEnc_Click(object sender, EventArgs e)
         {
             _ = EncPDFfile();
         }
-
         private void BtnShowPWD1_Click(object sender, EventArgs e)
         {
             BtnShowPWD1.Visible = false;
             BtnHidePWD1.Visible = true;
             TbEncPwd1.PasswordChar = '\0';
         }
-
         private void BtnHidePWD1_Click(object sender, EventArgs e)
         {
             BtnShowPWD1.Visible = true;
             BtnHidePWD1.Visible = false;
             TbEncPwd1.PasswordChar = '*';
         }
-
         private void BtnShowPWD2_Click(object sender, EventArgs e)
         {
             BtnHidePWD2.Visible = true;
             BtnShowPWD2.Visible = false;
             TbEncPwd2.PasswordChar = '\0';
         }
-
         private void BtnHidePWD2_Click(object sender, EventArgs e)
         {
             BtnHidePWD2.Visible = false;
             BtnShowPWD2.Visible = true;
             TbEncPwd2.PasswordChar = '*';
         }
-
         private void BtnExit_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void TbEncPwd1_MouseDown(object sender, MouseEventArgs e)
         {
             toolTip1.Show("Minimum password length is 8 characters!", TbEncPwd1);
         }
-
         private void TbEncPwd2_MouseDown(object sender, MouseEventArgs e)
         {
             toolTip1.Show("Minimum password length is 8 characters!", TbEncPwd2);

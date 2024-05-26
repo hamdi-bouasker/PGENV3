@@ -17,8 +17,6 @@ namespace PGENV3
         GetPathOrExtention gte = new GetPathOrExtention();
         private void DecryptDOCXFile(string fileName)
         {
-
-            //Load an existing Word document with password.
             FileStream inputStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
             WordDocument document = new WordDocument(inputStream, FormatType.Docx, TbDecPwd1.Text);
 
@@ -27,7 +25,7 @@ namespace PGENV3
             document.Save(outputStream, FormatType.Docx);
             inputStream.Close();
             outputStream.Close();
-
+            document.Close();
         }
 
         private async Task DecwordFile()
@@ -40,6 +38,7 @@ namespace PGENV3
 
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "docx files (*.docx)|*.docx|All files (*.*)|*.*";
+            ofd.Multiselect = false;
 
             if (TbDecPwd1.Text != "" && ofd.ShowDialog() == DialogResult.OK)
             {
@@ -66,14 +65,12 @@ namespace PGENV3
                         MessageBox.Show("File version is not supported!" + '\n' + '\n' + "Only Word version 2019 and above are supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-
-
                 }
 
                 catch (Exception)
                 {
                     LblProceeding.ResetText();
-                    MessageBox.Show("Error: Ensure the password is correct!" + '\n' + '\n' + "Ensure the file you want to decrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the file you want to decrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -103,8 +100,6 @@ namespace PGENV3
         private void BtnExit_Click_1(object sender, EventArgs e)
         {
             Close();
-        }
-
-        
+        }       
     }
 }

@@ -47,7 +47,7 @@
             this.labelImg.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelImg.ForeColor = System.Drawing.Color.White;
             this.labelImg.Image = ((System.Drawing.Image)(resources.GetObject("labelImg.Image")));
-            this.labelImg.Location = new System.Drawing.Point(297, 48);
+            this.labelImg.Location = new System.Drawing.Point(240, 48);
             this.labelImg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelImg.Name = "labelImg";
             this.labelImg.Size = new System.Drawing.Size(74, 53);
@@ -58,9 +58,9 @@
             // 
             this.BtnHidePWD1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnHidePWD1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnHidePWD1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(26)))));
+            this.BtnHidePWD1.ForeColor = System.Drawing.Color.White;
             this.BtnHidePWD1.Image = ((System.Drawing.Image)(resources.GetObject("BtnHidePWD1.Image")));
-            this.BtnHidePWD1.Location = new System.Drawing.Point(171, 190);
+            this.BtnHidePWD1.Location = new System.Drawing.Point(114, 190);
             this.BtnHidePWD1.Name = "BtnHidePWD1";
             this.BtnHidePWD1.Size = new System.Drawing.Size(35, 24);
             this.BtnHidePWD1.TabIndex = 55;
@@ -72,9 +72,9 @@
             // 
             this.BtnShowPWD1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnShowPWD1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnShowPWD1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(26)))));
+            this.BtnShowPWD1.ForeColor = System.Drawing.Color.White;
             this.BtnShowPWD1.Image = ((System.Drawing.Image)(resources.GetObject("BtnShowPWD1.Image")));
-            this.BtnShowPWD1.Location = new System.Drawing.Point(475, 190);
+            this.BtnShowPWD1.Location = new System.Drawing.Point(418, 190);
             this.BtnShowPWD1.Name = "BtnShowPWD1";
             this.BtnShowPWD1.Size = new System.Drawing.Size(35, 24);
             this.BtnShowPWD1.TabIndex = 54;
@@ -83,22 +83,23 @@
             // 
             // BtnExit
             // 
+            this.BtnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.BtnExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(26)))));
-            this.BtnExit.Location = new System.Drawing.Point(208, 527);
+            this.BtnExit.ForeColor = System.Drawing.Color.White;
+            this.BtnExit.Location = new System.Drawing.Point(151, 527);
             this.BtnExit.Margin = new System.Windows.Forms.Padding(4);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(259, 44);
             this.BtnExit.TabIndex = 53;
             this.BtnExit.Text = "Exit";
-            this.BtnExit.UseVisualStyleBackColor = true;
+            this.BtnExit.UseVisualStyleBackColor = false;
             this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // LblProceeding
             // 
             this.LblProceeding.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblProceeding.ForeColor = System.Drawing.Color.White;
-            this.LblProceeding.Location = new System.Drawing.Point(178, 386);
+            this.LblProceeding.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.LblProceeding.Location = new System.Drawing.Point(121, 398);
             this.LblProceeding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblProceeding.Name = "LblProceeding";
             this.LblProceeding.Size = new System.Drawing.Size(321, 28);
@@ -108,8 +109,8 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(210, 131);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.label2.Location = new System.Drawing.Point(153, 131);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(259, 41);
@@ -119,8 +120,9 @@
             // 
             // TbDecPwd1
             // 
-            this.TbDecPwd1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(26)))));
-            this.TbDecPwd1.Location = new System.Drawing.Point(211, 191);
+            this.TbDecPwd1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.TbDecPwd1.ForeColor = System.Drawing.Color.White;
+            this.TbDecPwd1.Location = new System.Drawing.Point(154, 191);
             this.TbDecPwd1.Name = "TbDecPwd1";
             this.TbDecPwd1.PasswordChar = '*';
             this.TbDecPwd1.Size = new System.Drawing.Size(259, 23);
@@ -129,23 +131,24 @@
             // 
             // BtnPDFFileDec
             // 
+            this.BtnPDFFileDec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.BtnPDFFileDec.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPDFFileDec.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(26)))));
-            this.BtnPDFFileDec.Location = new System.Drawing.Point(211, 300);
+            this.BtnPDFFileDec.ForeColor = System.Drawing.Color.White;
+            this.BtnPDFFileDec.Location = new System.Drawing.Point(154, 300);
             this.BtnPDFFileDec.Margin = new System.Windows.Forms.Padding(4);
             this.BtnPDFFileDec.Name = "BtnPDFFileDec";
             this.BtnPDFFileDec.Size = new System.Drawing.Size(259, 44);
             this.BtnPDFFileDec.TabIndex = 49;
             this.BtnPDFFileDec.Text = "Select the files";
-            this.BtnPDFFileDec.UseVisualStyleBackColor = true;
+            this.BtnPDFFileDec.UseVisualStyleBackColor = false;
             this.BtnPDFFileDec.Click += new System.EventHandler(this.BtnPDFFileDec_Click);
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(236, 4);
+            this.label1.Location = new System.Drawing.Point(179, 4);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(220, 41);
@@ -155,8 +158,8 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.progressBar1.Location = new System.Drawing.Point(178, 473);
+            this.progressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.progressBar1.Location = new System.Drawing.Point(121, 473);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(321, 28);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -171,8 +174,8 @@
             // MultiPDFDec
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(694, 594);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(581, 592);
             this.ControlBox = false;
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelImg);
@@ -187,6 +190,8 @@
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "MultiPDFDec";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();

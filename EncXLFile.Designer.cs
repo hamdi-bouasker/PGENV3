@@ -52,7 +52,7 @@
             this.labelImg.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelImg.ForeColor = System.Drawing.Color.White;
             this.labelImg.Image = ((System.Drawing.Image)(resources.GetObject("labelImg.Image")));
-            this.labelImg.Location = new System.Drawing.Point(301, 54);
+            this.labelImg.Location = new System.Drawing.Point(243, 54);
             this.labelImg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelImg.Name = "labelImg";
             this.labelImg.Size = new System.Drawing.Size(74, 53);
@@ -63,7 +63,7 @@
             // 
             this.BtnExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
-            this.BtnExit.Location = new System.Drawing.Point(215, 489);
+            this.BtnExit.Location = new System.Drawing.Point(157, 530);
             this.BtnExit.Margin = new System.Windows.Forms.Padding(4);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(259, 44);
@@ -76,7 +76,7 @@
             // 
             this.LblProceeding.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblProceeding.ForeColor = System.Drawing.Color.White;
-            this.LblProceeding.Location = new System.Drawing.Point(187, 415);
+            this.LblProceeding.Location = new System.Drawing.Point(129, 439);
             this.LblProceeding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblProceeding.Name = "LblProceeding";
             this.LblProceeding.Size = new System.Drawing.Size(321, 28);
@@ -87,7 +87,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(217, 207);
+            this.label3.Location = new System.Drawing.Point(159, 207);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(264, 41);
@@ -99,7 +99,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(217, 107);
+            this.label2.Location = new System.Drawing.Point(159, 107);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(259, 41);
@@ -110,7 +110,7 @@
             // TbEncPwd2
             // 
             this.TbEncPwd2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
-            this.TbEncPwd2.Location = new System.Drawing.Point(218, 267);
+            this.TbEncPwd2.Location = new System.Drawing.Point(160, 267);
             this.TbEncPwd2.Name = "TbEncPwd2";
             this.TbEncPwd2.PasswordChar = '*';
             this.TbEncPwd2.Size = new System.Drawing.Size(259, 22);
@@ -121,7 +121,7 @@
             // TbEncPwd1
             // 
             this.TbEncPwd1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
-            this.TbEncPwd1.Location = new System.Drawing.Point(218, 167);
+            this.TbEncPwd1.Location = new System.Drawing.Point(160, 167);
             this.TbEncPwd1.Name = "TbEncPwd1";
             this.TbEncPwd1.PasswordChar = '*';
             this.TbEncPwd1.Size = new System.Drawing.Size(259, 22);
@@ -133,7 +133,7 @@
             // 
             this.BtnXLFileEnc.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnXLFileEnc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
-            this.BtnXLFileEnc.Location = new System.Drawing.Point(217, 328);
+            this.BtnXLFileEnc.Location = new System.Drawing.Point(159, 328);
             this.BtnXLFileEnc.Margin = new System.Windows.Forms.Padding(4);
             this.BtnXLFileEnc.Name = "BtnXLFileEnc";
             this.BtnXLFileEnc.Size = new System.Drawing.Size(259, 44);
@@ -147,7 +147,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(237, 3);
+            this.label1.Location = new System.Drawing.Point(179, 3);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(220, 41);
@@ -163,7 +163,7 @@
             // 
             this.BtnShowPWD1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
             this.BtnShowPWD1.Image = ((System.Drawing.Image)(resources.GetObject("BtnShowPWD1.Image")));
-            this.BtnShowPWD1.Location = new System.Drawing.Point(486, 162);
+            this.BtnShowPWD1.Location = new System.Drawing.Point(428, 162);
             this.BtnShowPWD1.Margin = new System.Windows.Forms.Padding(3);
             this.BtnShowPWD1.Name = "BtnShowPWD1";
             this.BtnShowPWD1.Size = new System.Drawing.Size(26, 33);
@@ -175,7 +175,7 @@
             // 
             this.BtnShowPWD2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
             this.BtnShowPWD2.Image = ((System.Drawing.Image)(resources.GetObject("BtnShowPWD2.Image")));
-            this.BtnShowPWD2.Location = new System.Drawing.Point(486, 262);
+            this.BtnShowPWD2.Location = new System.Drawing.Point(428, 262);
             this.BtnShowPWD2.Margin = new System.Windows.Forms.Padding(3);
             this.BtnShowPWD2.Name = "BtnShowPWD2";
             this.BtnShowPWD2.Size = new System.Drawing.Size(26, 33);
@@ -187,7 +187,7 @@
             // 
             this.BtnHidePWD1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
             this.BtnHidePWD1.Image = ((System.Drawing.Image)(resources.GetObject("BtnHidePWD1.Image")));
-            this.BtnHidePWD1.Location = new System.Drawing.Point(185, 160);
+            this.BtnHidePWD1.Location = new System.Drawing.Point(127, 160);
             this.BtnHidePWD1.Margin = new System.Windows.Forms.Padding(3);
             this.BtnHidePWD1.Name = "BtnHidePWD1";
             this.BtnHidePWD1.Size = new System.Drawing.Size(26, 33);
@@ -200,7 +200,7 @@
             // 
             this.BtnHidePWD2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
             this.BtnHidePWD2.Image = ((System.Drawing.Image)(resources.GetObject("BtnHidePWD2.Image")));
-            this.BtnHidePWD2.Location = new System.Drawing.Point(185, 260);
+            this.BtnHidePWD2.Location = new System.Drawing.Point(127, 260);
             this.BtnHidePWD2.Margin = new System.Windows.Forms.Padding(3);
             this.BtnHidePWD2.Name = "BtnHidePWD2";
             this.BtnHidePWD2.Size = new System.Drawing.Size(26, 33);
@@ -220,7 +220,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(700, 600);
+            this.ClientSize = new System.Drawing.Size(581, 592);
             this.ControlBox = false;
             this.Controls.Add(this.BtnHidePWD2);
             this.Controls.Add(this.BtnHidePWD1);
@@ -240,6 +240,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EncXLFile";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,12 +1,7 @@
 ﻿using Syncfusion.XlsIO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,7 +15,6 @@ namespace PGENV3
         }
 
         GetPathOrExtention gte = new GetPathOrExtention();
-
         private void DecryptXLFile(string fileName)
         {
             using (ExcelEngine excelEngine = new ExcelEngine())
@@ -29,25 +23,18 @@ namespace PGENV3
                 application.DefaultVersion = ExcelVersion.Xlsx;
                 FileStream inputStream = new FileStream(fileName, FileMode.Open, FileAccess.ReadWrite);
 
-                //Open encrypted Excel document with password
                 IWorkbook workbook = application.Workbooks.Open(inputStream, ExcelParseOptions.Default, false, TbDecPwd1.Text);
                 IWorksheet worksheet = workbook.Worksheets[0];
 
-                //Decrypt workbook
                 workbook.PasswordToOpen = string.Empty;
 
-                #region Save
-                //Saving the workbook
                 FileStream outputStream = new FileStream(gte.GetDirPath(fileName) + "\\" + gte.GetfileName(fileName).Replace("Encrypted-", ""), FileMode.Create, FileAccess.Write);
                 workbook.SaveAs(outputStream);
-                #endregion
-
-                //Dispose streams
+              
                 outputStream.Close();
                 inputStream.Close();
-
+                workbook.Close();
             }
-
         }
         private async Task DecXLfiles()
         {
@@ -73,7 +60,7 @@ namespace PGENV3
                         if (gte.GetFileExtension(file) != ".xlsx")
                         {
                             LblProceeding.ResetText();
-                            MessageBox.Show("File version is not supported!" + '\n' + '\n' + "Only Excel 2019 and above are supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Files version is not supported!" + '\n' + '\n' + "Only Excel 2019 and above are supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
 
@@ -96,31 +83,27 @@ namespace PGENV3
                 {
                     LblProceeding.ResetText();
                     progressBar1.Visible = false;
-                    MessageBox.Show("Error: Ensure the password is correct!" + '\n' + '\n' + "Ensure the file you want to decrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the file you want to decrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
         }
-
         private void BtnXLFileDec_Click(object sender, EventArgs e)
         {
             _ = DecXLfiles();
         }
-
         private void BtnShowPWD1_Click(object sender, EventArgs e)
         {
             BtnShowPWD1.Visible = false;
             BtnHidePWD1.Visible = true;
             TbDecPwd1.PasswordChar = '\0';
         }
-
         private void BtnHidePWD1_Click(object sender, EventArgs e)
         {
             BtnShowPWD1.Visible = true;
             BtnHidePWD1.Visible = false;
             TbDecPwd1.PasswordChar = '*';
         }
-
         private void BtnExit_Click(object sender, EventArgs e)
         {
             Close();

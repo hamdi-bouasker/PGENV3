@@ -55,7 +55,7 @@
             // 
             this.BtnWordFileEnc.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnWordFileEnc.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.BtnWordFileEnc.Location = new System.Drawing.Point(224, 334);
+            this.BtnWordFileEnc.Location = new System.Drawing.Point(154, 334);
             this.BtnWordFileEnc.Margin = new System.Windows.Forms.Padding(4);
             this.BtnWordFileEnc.Name = "BtnWordFileEnc";
             this.BtnWordFileEnc.Size = new System.Drawing.Size(259, 44);
@@ -69,7 +69,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(244, 9);
+            this.label1.Location = new System.Drawing.Point(174, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(220, 41);
@@ -80,7 +80,7 @@
             // TbEncPwd1
             // 
             this.TbEncPwd1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.TbEncPwd1.Location = new System.Drawing.Point(225, 173);
+            this.TbEncPwd1.Location = new System.Drawing.Point(155, 173);
             this.TbEncPwd1.MaxLength = 16;
             this.TbEncPwd1.Name = "TbEncPwd1";
             this.TbEncPwd1.PasswordChar = '*';
@@ -92,7 +92,7 @@
             // TbEncPwd2
             // 
             this.TbEncPwd2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.TbEncPwd2.Location = new System.Drawing.Point(225, 273);
+            this.TbEncPwd2.Location = new System.Drawing.Point(155, 273);
             this.TbEncPwd2.MaxLength = 16;
             this.TbEncPwd2.Name = "TbEncPwd2";
             this.TbEncPwd2.PasswordChar = '*';
@@ -105,7 +105,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(224, 113);
+            this.label2.Location = new System.Drawing.Point(154, 113);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(259, 41);
@@ -117,7 +117,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(224, 213);
+            this.label3.Location = new System.Drawing.Point(154, 213);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(264, 41);
@@ -129,7 +129,7 @@
             // 
             this.LblProceeding.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblProceeding.ForeColor = System.Drawing.Color.White;
-            this.LblProceeding.Location = new System.Drawing.Point(192, 423);
+            this.LblProceeding.Location = new System.Drawing.Point(122, 441);
             this.LblProceeding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblProceeding.Name = "LblProceeding";
             this.LblProceeding.Size = new System.Drawing.Size(321, 28);
@@ -140,7 +140,7 @@
             // 
             this.BtnExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExit.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.BtnExit.Location = new System.Drawing.Point(222, 497);
+            this.BtnExit.Location = new System.Drawing.Point(152, 529);
             this.BtnExit.Margin = new System.Windows.Forms.Padding(4);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(259, 44);
@@ -155,7 +155,7 @@
             this.BtnShowPWD1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnShowPWD1.ForeColor = System.Drawing.Color.MidnightBlue;
             this.BtnShowPWD1.Image = ((System.Drawing.Image)(resources.GetObject("BtnShowPWD1.Image")));
-            this.BtnShowPWD1.Location = new System.Drawing.Point(489, 172);
+            this.BtnShowPWD1.Location = new System.Drawing.Point(419, 172);
             this.BtnShowPWD1.Name = "BtnShowPWD1";
             this.BtnShowPWD1.Size = new System.Drawing.Size(35, 24);
             this.BtnShowPWD1.TabIndex = 17;
@@ -168,7 +168,7 @@
             this.BtnShowPWD2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnShowPWD2.ForeColor = System.Drawing.Color.MidnightBlue;
             this.BtnShowPWD2.Image = ((System.Drawing.Image)(resources.GetObject("BtnShowPWD2.Image")));
-            this.BtnShowPWD2.Location = new System.Drawing.Point(490, 271);
+            this.BtnShowPWD2.Location = new System.Drawing.Point(420, 271);
             this.BtnShowPWD2.Name = "BtnShowPWD2";
             this.BtnShowPWD2.Size = new System.Drawing.Size(35, 24);
             this.BtnShowPWD2.TabIndex = 18;
@@ -181,7 +181,7 @@
             this.BtnHidePWD1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnHidePWD1.ForeColor = System.Drawing.Color.MidnightBlue;
             this.BtnHidePWD1.Image = ((System.Drawing.Image)(resources.GetObject("BtnHidePWD1.Image")));
-            this.BtnHidePWD1.Location = new System.Drawing.Point(185, 172);
+            this.BtnHidePWD1.Location = new System.Drawing.Point(115, 172);
             this.BtnHidePWD1.Name = "BtnHidePWD1";
             this.BtnHidePWD1.Size = new System.Drawing.Size(35, 24);
             this.BtnHidePWD1.TabIndex = 19;
@@ -195,7 +195,7 @@
             this.BtnHidePWD2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnHidePWD2.ForeColor = System.Drawing.Color.MidnightBlue;
             this.BtnHidePWD2.Image = ((System.Drawing.Image)(resources.GetObject("BtnHidePWD2.Image")));
-            this.BtnHidePWD2.Location = new System.Drawing.Point(184, 272);
+            this.BtnHidePWD2.Location = new System.Drawing.Point(114, 272);
             this.BtnHidePWD2.Name = "BtnHidePWD2";
             this.BtnHidePWD2.Size = new System.Drawing.Size(35, 24);
             this.BtnHidePWD2.TabIndex = 20;
@@ -208,7 +208,7 @@
             this.labelImg.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelImg.ForeColor = System.Drawing.Color.White;
             this.labelImg.Image = ((System.Drawing.Image)(resources.GetObject("labelImg.Image")));
-            this.labelImg.Location = new System.Drawing.Point(308, 60);
+            this.labelImg.Location = new System.Drawing.Point(238, 60);
             this.labelImg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelImg.Name = "labelImg";
             this.labelImg.Size = new System.Drawing.Size(74, 53);
@@ -226,7 +226,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(700, 600);
+            this.ClientSize = new System.Drawing.Size(581, 592);
             this.ControlBox = false;
             this.Controls.Add(this.labelImg);
             this.Controls.Add(this.BtnHidePWD2);
@@ -246,6 +246,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EncWordFile";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();

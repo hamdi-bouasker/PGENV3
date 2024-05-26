@@ -52,7 +52,9 @@
             this.MenuItemMultipleWordDec = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemMultipleXLDec = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemMultiplePDFDec = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.Readme = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +68,9 @@
             this.toolStripButton2,
             this.toolStripSeparator2,
             this.BtnAbout,
-            this.toolStripButton3});
+            this.toolStripButton3,
+            this.toolStripSeparator3,
+            this.Readme});
             this.toolStrip1.Name = "toolStrip1";
             // 
             // TsBtnGeneratePWD
@@ -216,6 +220,19 @@
             resources.ApplyResources(this.MenuItemMultiplePDFDec, "MenuItemMultiplePDFDec");
             this.MenuItemMultiplePDFDec.Click += new System.EventHandler(this.MenuItemMultiplePDFDec_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+            // 
+            // Readme
+            // 
+            this.Readme.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            resources.ApplyResources(this.Readme, "Readme");
+            this.Readme.Name = "Readme";
+            this.Readme.Click += new System.EventHandler(this.Readme_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -226,6 +243,7 @@
             this.IsMdiContainer = true;
             this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.helpProvider1.SetShowHelp(this, ((bool)(resources.GetObject("$this.ShowHelp"))));
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.toolStrip1.ResumeLayout(false);
@@ -261,6 +279,8 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemMultipleWordDec;
         private System.Windows.Forms.ToolStripMenuItem MenuItemMultipleXLDec;
         private System.Windows.Forms.ToolStripMenuItem MenuItemMultiplePDFDec;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton Readme;
     }
 }
 

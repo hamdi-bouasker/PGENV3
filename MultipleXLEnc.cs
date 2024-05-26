@@ -1,12 +1,7 @@
 ﻿using Syncfusion.XlsIO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,7 +15,6 @@ namespace PGENV3
         }
 
         GetPathOrExtention gte = new GetPathOrExtention();
-
         private void EncryptXLFile(string fileName)
         {
             using (ExcelEngine excelEngine = new ExcelEngine())
@@ -30,25 +24,19 @@ namespace PGENV3
 
                 FileStream inputStream = new FileStream(fileName, FileMode.Open, FileAccess.ReadWrite);
 
-                //Open Excel
                 IWorkbook workbook = application.Workbooks.Open(inputStream);
                 IWorksheet worksheet = workbook.Worksheets[0];
 
                 //Encrypt workbook with password
                 workbook.PasswordToOpen = TbEncPwd2.Text;
 
-                #region Save
-                //Saving the workbook
                 FileStream outputStream = new FileStream(gte.GetDirPath(fileName) + "\\Encrypted-" + gte.GetfileName(fileName), FileMode.Create, FileAccess.Write);
-                workbook.SaveAs(outputStream);
-                #endregion
 
-                //Dispose streams
+                workbook.SaveAs(outputStream);
                 outputStream.Close();
                 inputStream.Close();
                 workbook.Close();
             }
-
         }
 
         private async Task EncXLFiles()
@@ -107,58 +95,50 @@ namespace PGENV3
 
                 }
 
-                catch (Exception ex)
+                catch (Exception)
                 {
                     LblProceeding.ResetText();
-                    MessageBox.Show("Error occured! Maybe the file is already encrypted?!" + '\n' + '\n' + ex.Message, "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the files you want to encrypt are not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
         }
-
         private void BtnXLFileEnc_Click(object sender, EventArgs e)
         {
             _ = EncXLFiles();
         }
-
         private void BtnShowPWD1_Click(object sender, EventArgs e)
         {
             BtnShowPWD1.Visible = false;
             BtnHidePWD1.Visible = true;
             TbEncPwd1.PasswordChar = '\0';
         }
-
         private void BtnHidePWD1_Click(object sender, EventArgs e)
         {
             BtnShowPWD1.Visible = true;
             BtnHidePWD1.Visible = false;
             TbEncPwd1.PasswordChar = '*';
         }
-
         private void BtnShowPWD2_Click(object sender, EventArgs e)
         {
             BtnHidePWD2.Visible = true;
             BtnShowPWD2.Visible = false;
             TbEncPwd2.PasswordChar = '\0';
         }
-
         private void BtnHidePWD2_Click(object sender, EventArgs e)
         {
             BtnHidePWD2.Visible = false;
             BtnShowPWD2.Visible = true;
             TbEncPwd2.PasswordChar = '*';
         }
-
         private void BtnExit_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void TbEncPwd1_MouseDown(object sender, MouseEventArgs e)
         {
             toolTip1.Show("Minimum password length is 8 characters!", TbEncPwd1);
         }
-
         private void TbEncPwd2_MouseDown(object sender, MouseEventArgs e)
         {
             toolTip1.Show("Minimum password length is 8 characters!", TbEncPwd2);

@@ -18,21 +18,18 @@ namespace PGENV3
         GetPathOrExtention gte = new GetPathOrExtention();
         private void EncryptDOCXFile(string fileName)
         {
-            
-            // Load an existing Word document.
             FileStream inputStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
 
             WordDocument document = new WordDocument(inputStream, FormatType.Docx);
 
-            // Encrypt the Word document with a password.
             document.EncryptDocument(TbEncPwd2.Text);
 
-            // Save the encrypted Word document.
             FileStream outputStream = new FileStream(gte.GetDirPath(fileName) + "\\Encrypted-" + gte.GetfileName(fileName), FileMode.Create, FileAccess.Write);
             
             document.Save(outputStream, FormatType.Docx);
             inputStream.Close();
             outputStream.Close();
+            document.Close();
         }
 
         private async Task EncwordFile()
@@ -57,10 +54,10 @@ namespace PGENV3
 
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "docx files (*.docx)|*.docx|All files (*.*)|*.*";
+            ofd.Multiselect = false;
 
             if (TbEncPwd1.Text == TbEncPwd2.Text && ofd.ShowDialog() == DialogResult.OK)
             {
-
                 try
                 {
                     if (gte.GetFileExtension(ofd.FileName) == ".docx")
@@ -75,7 +72,6 @@ namespace PGENV3
                             MessageBox.Show("File Successfully Encrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LblProceeding.ResetText();
                         }
-
                     }
 
                     if (gte.GetFileExtension(ofd.FileName) != ".docx")
@@ -84,17 +80,14 @@ namespace PGENV3
                         MessageBox.Show("File version is not supported!" + '\n' + '\n' + "Only Word version 2019 and above are supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-
-
                 }
 
                 catch (Exception)
                 {
                     LblProceeding.ResetText();
-                    MessageBox.Show("Error: Ensure the file you want to enccrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the file you want to encrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
             }
         }
 

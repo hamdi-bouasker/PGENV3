@@ -19,27 +19,24 @@ namespace PGENV3
 
         private void EncryptPDFFile(string fileName)
         {
-            //Load the PDF document.
             FileStream docStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
             PdfLoadedDocument document = new PdfLoadedDocument(docStream);
 
-            //Document security.
             PdfSecurity security = document.Security;
-            //Specifies key size and encryption algorithm.
+            
             security.KeySize = PdfEncryptionKeySize.Key256Bit;
             security.Algorithm = PdfEncryptionAlgorithm.AES;
-            //Specifies encryption option.
+           
             security.EncryptionOptions = PdfEncryptionOptions.EncryptAllContents;
             security.OwnerPassword = TbEncPwd2.Text;
             security.UserPassword = TbEncPwd2.Text;
 
             FileStream outputFileStream = new FileStream(gte.GetDirPath(fileName) + "\\Encrypted-" + gte.GetfileName(fileName), FileMode.Create, FileAccess.ReadWrite);
-
-            //Save the PDF document to file stream.
-            document.Save(outputFileStream);
-            document.Close(true);
-            docStream.Close();
+          
+            document.Save(outputFileStream);           
             outputFileStream.Close();
+            document.Close();
+            docStream.Close();
         }
 
         private async Task EncPDFfile()
@@ -64,10 +61,10 @@ namespace PGENV3
 
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
+            ofd.Multiselect = false;
 
             if (TbEncPwd1.Text == TbEncPwd2.Text && ofd.ShowDialog() == DialogResult.OK)
             {
-
                 try
                 {
                     if (gte.GetFileExtension(ofd.FileName) == ".pdf")
@@ -88,10 +85,9 @@ namespace PGENV3
                 catch (Exception)
                 {
                     LblProceeding.ResetText();
-                    MessageBox.Show("Error: Ensure the password is correct!" + '\n' + '\n' + "Ensure the file you want to decrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the file you want to decrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
             }
         }
 

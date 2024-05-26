@@ -50,7 +50,7 @@
             this.labelImg.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelImg.ForeColor = System.Drawing.Color.White;
             this.labelImg.Image = ((System.Drawing.Image)(resources.GetObject("labelImg.Image")));
-            this.labelImg.Location = new System.Drawing.Point(302, 55);
+            this.labelImg.Location = new System.Drawing.Point(239, 55);
             this.labelImg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelImg.Name = "labelImg";
             this.labelImg.Size = new System.Drawing.Size(74, 53);
@@ -63,7 +63,7 @@
             this.BtnHidePWD1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnHidePWD1.ForeColor = System.Drawing.Color.MidnightBlue;
             this.BtnHidePWD1.Image = ((System.Drawing.Image)(resources.GetObject("BtnHidePWD1.Image")));
-            this.BtnHidePWD1.Location = new System.Drawing.Point(179, 180);
+            this.BtnHidePWD1.Location = new System.Drawing.Point(116, 180);
             this.BtnHidePWD1.Name = "BtnHidePWD1";
             this.BtnHidePWD1.Size = new System.Drawing.Size(35, 24);
             this.BtnHidePWD1.TabIndex = 32;
@@ -77,7 +77,7 @@
             this.BtnShowPWD1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnShowPWD1.ForeColor = System.Drawing.Color.MidnightBlue;
             this.BtnShowPWD1.Image = ((System.Drawing.Image)(resources.GetObject("BtnShowPWD1.Image")));
-            this.BtnShowPWD1.Location = new System.Drawing.Point(483, 180);
+            this.BtnShowPWD1.Location = new System.Drawing.Point(420, 180);
             this.BtnShowPWD1.Name = "BtnShowPWD1";
             this.BtnShowPWD1.Size = new System.Drawing.Size(35, 24);
             this.BtnShowPWD1.TabIndex = 30;
@@ -88,7 +88,7 @@
             // 
             this.BtnExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExit.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.BtnExit.Location = new System.Drawing.Point(216, 489);
+            this.BtnExit.Location = new System.Drawing.Point(153, 515);
             this.BtnExit.Margin = new System.Windows.Forms.Padding(4);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(259, 44);
@@ -101,7 +101,7 @@
             // 
             this.LblProceeding.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblProceeding.ForeColor = System.Drawing.Color.White;
-            this.LblProceeding.Location = new System.Drawing.Point(185, 400);
+            this.LblProceeding.Location = new System.Drawing.Point(122, 409);
             this.LblProceeding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblProceeding.Name = "LblProceeding";
             this.LblProceeding.Size = new System.Drawing.Size(321, 28);
@@ -112,7 +112,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(218, 121);
+            this.label2.Location = new System.Drawing.Point(155, 121);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(259, 41);
@@ -123,7 +123,7 @@
             // TbDecPwd1
             // 
             this.TbDecPwd1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.TbDecPwd1.Location = new System.Drawing.Point(219, 181);
+            this.TbDecPwd1.Location = new System.Drawing.Point(156, 181);
             this.TbDecPwd1.Name = "TbDecPwd1";
             this.TbDecPwd1.PasswordChar = '*';
             this.TbDecPwd1.Size = new System.Drawing.Size(259, 23);
@@ -134,7 +134,7 @@
             // 
             this.BtnWordFileDec.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnWordFileDec.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.BtnWordFileDec.Location = new System.Drawing.Point(219, 290);
+            this.BtnWordFileDec.Location = new System.Drawing.Point(156, 290);
             this.BtnWordFileDec.Margin = new System.Windows.Forms.Padding(4);
             this.BtnWordFileDec.Name = "BtnWordFileDec";
             this.BtnWordFileDec.Size = new System.Drawing.Size(259, 44);
@@ -148,7 +148,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(238, 7);
+            this.label1.Location = new System.Drawing.Point(175, 7);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(226, 41);
@@ -161,7 +161,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(700, 600);
+            this.ClientSize = new System.Drawing.Size(581, 592);
             this.ControlBox = false;
             this.Controls.Add(this.labelImg);
             this.Controls.Add(this.BtnHidePWD1);
@@ -177,6 +177,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DecWordFile";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
