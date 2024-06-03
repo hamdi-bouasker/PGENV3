@@ -63,37 +63,43 @@ namespace PGENV3
 
             if (TbEncPwd1.Text == TbEncPwd2.Text && ofd.ShowDialog() == DialogResult.OK)
             {
-                try
-                {
-                    if (gte.GetFileExtension(ofd.FileName) == ".xlsx")
-                    {
-                        LblProceeding.Text = "Proceeding... Do not exit the software!";
-                        var task = Task.Run(() => EncryptXLFile(ofd.FileName)).ContinueWith(t => File.Delete(ofd.FileName));
-                        await task;
-                        if (task.IsCompleted)
-                        {
-                            LblProceeding.Text = "Done!";
-                            MessageBox.Show("File Successfully Encrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LblProceeding.ResetText();
-                        }
-                    }
-
-                    if (gte.GetFileExtension(ofd.FileName) != ".xlsx")
-                    {
-                        LblProceeding.ResetText();
-                        MessageBox.Show("File version is not supported!" + '\n' + '\n' + "Only Excel version 2019 and above are supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }                   
-                }
-
-                catch (Exception)
+                if (gte.GetFileExtension(ofd.FileName) != ".xlsx")
                 {
                     LblProceeding.ResetText();
-                    MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the file you want to decrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("File version is not supported!" + '\n' + '\n' + "Only Excel version 2019 and above are supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
+                if (gte.GetFileExtension(ofd.FileName) == ".xlsx")
+                {
+                    LblProceeding.Text = "Proceeding...Do not exit the software!";
+                    var task = Task.Run(() => EncryptXLFile(ofd.FileName)).ContinueWith(t => { File.Delete(ofd.FileName); t.Wait(); });
+                    try
+                    {
+                        await task;
+                        LblProceeding.Text = "Done!";
+                        MessageBox.Show("File Successfully Encrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LblProceeding.ResetText();
+                    }
+
+                    catch (AggregateException)
+                    {
+
+                        MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the files you want to encrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        LblProceeding.ResetText();
+                        return;
+                    }
+
+                    catch (Exception)
+                    {
+                        LblProceeding.ResetText();
+                        MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the file you want to encrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                                     
             }
-        }
+    }
         private void BtnXLFileEnc_Click(object sender, EventArgs e)
         {
             _ = EncryptXLFile();

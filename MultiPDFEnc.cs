@@ -60,45 +60,66 @@ namespace PGENV3
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
             ofd.Multiselect = true;
-            var tasks = new List<Task>();
+            var tasks1 = new List<Task>();
+            var tasks2 = new List<Task>();
+            var tasks3 = new List<Task>();
 
             if (TbEncPwd1.Text == TbEncPwd2.Text && ofd.ShowDialog() == DialogResult.OK)
-            {
-                progressBar1.Visible = true;
-
-                try
+            {                           
+                foreach (string file in ofd.FileNames)
                 {
-                    foreach (string file in ofd.FileNames)
+                    if (gte.GetFileExtension(file) != ".pdf")
                     {
-                        if (gte.GetFileExtension(file) != ".pdf")
-                        {
-                            LblProceeding.ResetText();
-                            MessageBox.Show("Please select PDF files only!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-
-                        if (gte.GetFileExtension(file) == ".pdf")
-                        {                           
-                            LblProceeding.Text = "Proceeding... Do not exit the software!";
-                            var task = Task.Run(() => EncryptPDFFile(file)).ContinueWith(t => File.Delete(file)).ContinueWith(p => progressBar1.PerformStep());
-                            tasks.Add(task);                            
-                        }
+                        LblProceeding.ResetText();
+                        MessageBox.Show("Please select PDF files only!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
 
-                    await Task.WhenAll(tasks);
-                    LblProceeding.Text = "Done!";
-                    MessageBox.Show("Files Successfully Encrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LblProceeding.ResetText();
-                    progressBar1.Visible = false;
-                }
-
-                catch (Exception)
-                {
-                    LblProceeding.ResetText();
-                    MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the files you want to encrypt are not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                    if (gte.GetFileExtension(file) == ".pdf")
+                    {
+                        var task1 = Task.Run(() => EncryptPDFFile(file));
+                        var task2 = task1.ContinueWith(t => File.Delete(file));
+                        var task3 = task2.ContinueWith(t => LBLfileNames.Text = file);
+                        tasks1.Add(task1);
+                        tasks2.Add(task2);
+                        tasks3.Add(task3);
+                    }
+                }                    
             }
+            try
+            {
+                LblProceeding.Text = "Proceeding...Do not exit the software!";
+                await Task.WhenAll(tasks1);
+                LblProceeding.Text = "Encrypting the files...";
+                await Task.Delay(1000);
+                await Task.WhenAll(tasks2);
+                LblProceeding.Text = "Almost done...";
+                await Task.Delay(1000);
+                await Task.WhenAll(tasks3);
+                LblProceeding.Text = "Done!";
+                MessageBox.Show("Files Successfully Encrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LblProceeding.ResetText();
+                LBLfileNames.ResetText();
+            }
+
+            catch (AggregateException)
+            {
+
+                MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the files you want to encrypt are not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LblProceeding.ResetText();
+                LBLfileNames.ResetText();
+                return;
+            }
+
+            catch (Exception)
+            {
+
+                MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the files you want to encrypt are not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LblProceeding.ResetText();
+                LBLfileNames.ResetText();
+                return;
+            }
+
         }
         private void BtnPDFFileEnc_Click(object sender, EventArgs e)
         {

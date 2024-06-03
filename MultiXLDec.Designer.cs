@@ -38,8 +38,8 @@
             this.TbDecPwd1 = new System.Windows.Forms.TextBox();
             this.BtnXLFileDec = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.LBLfileNames = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnHidePWD1
@@ -96,7 +96,7 @@
             // 
             this.LblProceeding.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblProceeding.ForeColor = System.Drawing.Color.White;
-            this.LblProceeding.Location = new System.Drawing.Point(122, 402);
+            this.LblProceeding.Location = new System.Drawing.Point(122, 383);
             this.LblProceeding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblProceeding.Name = "LblProceeding";
             this.LblProceeding.Size = new System.Drawing.Size(321, 28);
@@ -134,7 +134,7 @@
             this.BtnXLFileDec.Name = "BtnXLFileDec";
             this.BtnXLFileDec.Size = new System.Drawing.Size(259, 44);
             this.BtnXLFileDec.TabIndex = 53;
-            this.BtnXLFileDec.Text = "Select a file";
+            this.BtnXLFileDec.Text = "Select The Files";
             this.BtnXLFileDec.UseVisualStyleBackColor = true;
             this.BtnXLFileDec.Click += new System.EventHandler(this.BtnXLFileDec_Click);
             // 
@@ -151,28 +151,29 @@
             this.label1.Text = "Decrypt Excel Files";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // progressBar1
-            // 
-            this.progressBar1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.progressBar1.Location = new System.Drawing.Point(124, 473);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(321, 28);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 61;
-            this.progressBar1.Visible = false;
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Multiselect = true;
             // 
+            // LBLfileNames
+            // 
+            this.LBLfileNames.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLfileNames.ForeColor = System.Drawing.Color.White;
+            this.LBLfileNames.Location = new System.Drawing.Point(59, 471);
+            this.LBLfileNames.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LBLfileNames.Name = "LBLfileNames";
+            this.LBLfileNames.Size = new System.Drawing.Size(442, 28);
+            this.LBLfileNames.TabIndex = 61;
+            this.LBLfileNames.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MultiXLDec
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(581, 592);
+            this.ClientSize = new System.Drawing.Size(573, 584);
             this.ControlBox = false;
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.LBLfileNames);
             this.Controls.Add(this.BtnHidePWD1);
             this.Controls.Add(this.BtnShowPWD1);
             this.Controls.Add(this.labelImg);
@@ -204,7 +205,7 @@
         private System.Windows.Forms.TextBox TbDecPwd1;
         private System.Windows.Forms.Button BtnXLFileDec;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label LBLfileNames;
     }
 }

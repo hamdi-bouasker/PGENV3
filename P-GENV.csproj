@@ -167,17 +167,17 @@
     <Compile Include="MultiPDFEnc.Designer.cs">
       <DependentUpon>MultiPDFEnc.cs</DependentUpon>
     </Compile>
-    <Compile Include="MultipleWordEnc.cs">
+    <Compile Include="MultiWordEnc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MultipleWordEnc.Designer.cs">
-      <DependentUpon>MultipleWordEnc.cs</DependentUpon>
+    <Compile Include="MultiWordEnc.Designer.cs">
+      <DependentUpon>MultiWordEnc.cs</DependentUpon>
     </Compile>
-    <Compile Include="MultipleXLEnc.cs">
+    <Compile Include="MultiXLEnc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MultipleXLEnc.Designer.cs">
-      <DependentUpon>MultipleXLEnc.cs</DependentUpon>
+    <Compile Include="MultiXLEnc.Designer.cs">
+      <DependentUpon>MultiXLEnc.cs</DependentUpon>
     </Compile>
     <Compile Include="MultiWordDec.cs">
       <SubType>Form</SubType>
@@ -232,11 +232,11 @@
     <EmbeddedResource Include="MultiPDFEnc.resx">
       <DependentUpon>MultiPDFEnc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MultipleWordEnc.resx">
-      <DependentUpon>MultipleWordEnc.cs</DependentUpon>
+    <EmbeddedResource Include="MultiWordEnc.resx">
+      <DependentUpon>MultiWordEnc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MultipleXLEnc.resx">
-      <DependentUpon>MultipleXLEnc.cs</DependentUpon>
+    <EmbeddedResource Include="MultiXLEnc.resx">
+      <DependentUpon>MultiXLEnc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MultiWordDec.resx">
       <DependentUpon>MultiWordDec.cs</DependentUpon>

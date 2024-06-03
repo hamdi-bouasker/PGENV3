@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MultiWordDec));
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.labelImg = new System.Windows.Forms.Label();
             this.BtnHidePWD1 = new System.Windows.Forms.Button();
             this.BtnShowPWD1 = new System.Windows.Forms.Button();
@@ -40,17 +39,8 @@
             this.BtnWordFileDec = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.LBLfileNames = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.progressBar1.Location = new System.Drawing.Point(125, 435);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(321, 28);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 49;
-            this.progressBar1.Visible = false;
             // 
             // labelImg
             // 
@@ -108,7 +98,7 @@
             // 
             this.LblProceeding.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblProceeding.ForeColor = System.Drawing.Color.White;
-            this.LblProceeding.Location = new System.Drawing.Point(125, 368);
+            this.LblProceeding.Location = new System.Drawing.Point(125, 363);
             this.LblProceeding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblProceeding.Name = "LblProceeding";
             this.LblProceeding.Size = new System.Drawing.Size(321, 28);
@@ -147,7 +137,7 @@
             this.BtnWordFileDec.Name = "BtnWordFileDec";
             this.BtnWordFileDec.Size = new System.Drawing.Size(259, 44);
             this.BtnWordFileDec.TabIndex = 37;
-            this.BtnWordFileDec.Text = "Select files";
+            this.BtnWordFileDec.Text = "Select The Files";
             this.BtnWordFileDec.UseVisualStyleBackColor = true;
             this.BtnWordFileDec.Click += new System.EventHandler(this.BtnWordFileDec_Click);
             // 
@@ -169,13 +159,24 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Multiselect = true;
             // 
+            // LBLfileNames
+            // 
+            this.LBLfileNames.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLfileNames.ForeColor = System.Drawing.Color.White;
+            this.LBLfileNames.Location = new System.Drawing.Point(74, 448);
+            this.LBLfileNames.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LBLfileNames.Name = "LBLfileNames";
+            this.LBLfileNames.Size = new System.Drawing.Size(442, 28);
+            this.LBLfileNames.TabIndex = 49;
+            this.LBLfileNames.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MultiWordDec
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(581, 592);
+            this.ClientSize = new System.Drawing.Size(573, 584);
             this.ControlBox = false;
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.LBLfileNames);
             this.Controls.Add(this.labelImg);
             this.Controls.Add(this.BtnHidePWD1);
             this.Controls.Add(this.BtnShowPWD1);
@@ -197,8 +198,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label labelImg;
         private System.Windows.Forms.Button BtnHidePWD1;
         private System.Windows.Forms.Button BtnShowPWD1;
@@ -209,5 +208,6 @@
         private System.Windows.Forms.Button BtnWordFileDec;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label LBLfileNames;
     }
 }

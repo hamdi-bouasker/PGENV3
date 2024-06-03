@@ -69,7 +69,7 @@ namespace PGENV3
         }
         private void MenuItemMultipleWordEnc_Click(object sender, EventArgs e)
         {
-            MultipleWordEnc multipleWordEnc = new MultipleWordEnc();
+            MultiWordEnc multipleWordEnc = new MultiWordEnc();
             multipleWordEnc.MdiParent = this;
             multipleWordEnc.Show();
         }

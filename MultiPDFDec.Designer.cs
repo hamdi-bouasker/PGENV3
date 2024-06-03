@@ -38,8 +38,8 @@
             this.TbDecPwd1 = new System.Windows.Forms.TextBox();
             this.BtnPDFFileDec = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.LBLfileNames = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelImg
@@ -86,7 +86,7 @@
             this.BtnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.BtnExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExit.ForeColor = System.Drawing.Color.White;
-            this.BtnExit.Location = new System.Drawing.Point(151, 527);
+            this.BtnExit.Location = new System.Drawing.Point(151, 531);
             this.BtnExit.Margin = new System.Windows.Forms.Padding(4);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(259, 44);
@@ -99,7 +99,7 @@
             // 
             this.LblProceeding.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblProceeding.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.LblProceeding.Location = new System.Drawing.Point(121, 398);
+            this.LblProceeding.Location = new System.Drawing.Point(121, 383);
             this.LblProceeding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblProceeding.Name = "LblProceeding";
             this.LblProceeding.Size = new System.Drawing.Size(321, 28);
@@ -139,7 +139,7 @@
             this.BtnPDFFileDec.Name = "BtnPDFFileDec";
             this.BtnPDFFileDec.Size = new System.Drawing.Size(259, 44);
             this.BtnPDFFileDec.TabIndex = 49;
-            this.BtnPDFFileDec.Text = "Select the files";
+            this.BtnPDFFileDec.Text = "Select The Files";
             this.BtnPDFFileDec.UseVisualStyleBackColor = false;
             this.BtnPDFFileDec.Click += new System.EventHandler(this.BtnPDFFileDec_Click);
             // 
@@ -156,28 +156,29 @@
             this.label1.Text = "Decrypt PDF Files";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // progressBar1
-            // 
-            this.progressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.progressBar1.Location = new System.Drawing.Point(121, 473);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(321, 28);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 57;
-            this.progressBar1.Visible = false;
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Multiselect = true;
             // 
+            // LBLfileNames
+            // 
+            this.LBLfileNames.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLfileNames.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.LBLfileNames.Location = new System.Drawing.Point(60, 475);
+            this.LBLfileNames.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LBLfileNames.Name = "LBLfileNames";
+            this.LBLfileNames.Size = new System.Drawing.Size(442, 28);
+            this.LBLfileNames.TabIndex = 57;
+            this.LBLfileNames.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MultiPDFDec
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(581, 592);
+            this.ClientSize = new System.Drawing.Size(573, 584);
             this.ControlBox = false;
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.LBLfileNames);
             this.Controls.Add(this.labelImg);
             this.Controls.Add(this.BtnHidePWD1);
             this.Controls.Add(this.BtnShowPWD1);
@@ -209,7 +210,7 @@
         private System.Windows.Forms.TextBox TbDecPwd1;
         private System.Windows.Forms.Button BtnPDFFileDec;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label LBLfileNames;
     }
 }

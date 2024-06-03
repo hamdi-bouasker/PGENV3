@@ -47,45 +47,65 @@ namespace PGENV3
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "xlsx files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
             ofd.Multiselect = true;
-            var tasks = new List<Task>();
+            var tasks1 = new List<Task>();
+            var tasks2 = new List<Task>();
+            var tasks3 = new List<Task>();
 
             if (TbDecPwd1.Text != "" && ofd.ShowDialog() == DialogResult.OK)
-            {
-                progressBar1.Visible = true;
-
-                try
-                {
+            {               
                     foreach (var file in ofd.FileNames)
                     {
                         if (gte.GetFileExtension(file) != ".xlsx")
                         {
                             LblProceeding.ResetText();
-                            MessageBox.Show("Files version is not supported!" + '\n' + '\n' + "Only Excel 2019 and above are supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("File version is not supported!" + '\n' + '\n' + "Only Excel 2019 and above are supported!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
 
                         if (gte.GetFileExtension(ofd.FileName) == ".xlsx")
                         {
-                            LblProceeding.Text = "Proceeding... Do not exit the software!";
-                            var task = Task.Run(() => DecryptXLFile(file)).ContinueWith(t => File.Delete(file)).ContinueWith(p => progressBar1.PerformStep());
-                            tasks.Add(task);
+                        var task1 = Task.Run(() => DecryptXLFile(file));
+                        var task2 = task1.ContinueWith(t => File.Delete(file));
+                        var task3 = task2.ContinueWith(t => LBLfileNames.Text = file);
+                        tasks1.Add(task1);
+                        tasks2.Add(task2);
+                        tasks3.Add(task3);
                         }
-                    }
+                    }                   
+            }
 
-                    await Task.WhenAll(tasks);
-                    LblProceeding.Text = "Done!";
-                    MessageBox.Show("Files Successfully Decrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LblProceeding.ResetText();
-                    progressBar1.Visible = false;
-                }
+            try
+            {
+                LblProceeding.Text = "Proceeding...Do not exit the software!";
+                await Task.WhenAll(tasks1);
+                LblProceeding.Text = "Decrypting the files...";
+                await Task.Delay(1000);
+                await Task.WhenAll(tasks2);
+                LblProceeding.Text = "Almost done...";
+                await Task.Delay(1000);
+                await Task.WhenAll(tasks3);
+                LblProceeding.Text = "Done!";
+                MessageBox.Show("Files Successfully Decrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LblProceeding.ResetText();
+                LBLfileNames.ResetText();
+            }
 
-                catch (Exception)
-                {
-                    LblProceeding.ResetText();
-                    progressBar1.Visible = false;
-                    MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the file you want to decrypt is not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+            catch (AggregateException)
+            {
+
+                MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the files you want to decrypt are not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LblProceeding.ResetText();
+                LBLfileNames.ResetText();
+                return;
+            }
+
+            catch (Exception)
+            {
+
+                MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the files you want to decrypt are not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LblProceeding.ResetText();
+                LBLfileNames.ResetText();
+                return;
             }
         }
         private void BtnXLFileDec_Click(object sender, EventArgs e)
