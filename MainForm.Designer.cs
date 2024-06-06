@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.TsBtnGeneratePWD = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -53,25 +52,10 @@
             this.MenuItemMultipleXLDec = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemMultiplePDFDec = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.Readme = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            resources.ApplyResources(this.toolStrip1, "toolStrip1");
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TsBtnGeneratePWD,
-            this.toolStripSeparator1,
-            this.toolStripButton2,
-            this.toolStripSeparator2,
-            this.BtnAbout,
-            this.toolStripButton3,
-            this.toolStripSeparator3,
-            this.Readme});
-            this.toolStrip1.Name = "toolStrip1";
             // 
             // TsBtnGeneratePWD
             // 
@@ -233,6 +217,21 @@
             this.Readme.Name = "Readme";
             this.Readme.Click += new System.EventHandler(this.Readme_Click);
             // 
+            // toolStrip1
+            // 
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TsBtnGeneratePWD,
+            this.toolStripSeparator1,
+            this.toolStripButton2,
+            this.toolStripSeparator2,
+            this.BtnAbout,
+            this.toolStripButton3,
+            this.toolStripSeparator3,
+            this.Readme});
+            this.toolStrip1.Name = "toolStrip1";
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -243,7 +242,6 @@
             this.IsMdiContainer = true;
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.helpProvider1.SetShowHelp(this, ((bool)(resources.GetObject("$this.ShowHelp"))));
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.toolStrip1.ResumeLayout(false);
@@ -255,32 +253,31 @@
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton TsBtnGeneratePWD;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton BtnAbout;
         private System.Windows.Forms.ToolStripDropDownButton toolStripButton2;
         private System.Windows.Forms.ToolStripMenuItem EncFileMenuItem;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripButton3;
-        private System.Windows.Forms.ToolStripMenuItem DecFileMenuItem;
         private System.Windows.Forms.ToolStripMenuItem EncWordFile;
         private System.Windows.Forms.ToolStripMenuItem EncExcelFile;
         private System.Windows.Forms.ToolStripMenuItem EncPDFFile;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemDecWordFile;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemDecXLFile;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemDecPDFFile;
-        private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.ToolStripMenuItem encryptMultipleFilesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuItemMultipleWordEnc;
         private System.Windows.Forms.ToolStripMenuItem MenuItemMultipleXLEnc;
         private System.Windows.Forms.ToolStripMenuItem MenuItemMultiplePDFEnc;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton BtnAbout;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripButton3;
+        private System.Windows.Forms.ToolStripMenuItem DecFileMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemDecWordFile;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemDecXLFile;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemDecPDFFile;
         private System.Windows.Forms.ToolStripMenuItem decryptMultipleFilesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuItemMultipleWordDec;
         private System.Windows.Forms.ToolStripMenuItem MenuItemMultipleXLDec;
         private System.Windows.Forms.ToolStripMenuItem MenuItemMultiplePDFDec;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton Readme;
+        private System.Windows.Forms.ToolStrip toolStrip1;
     }
 }
 

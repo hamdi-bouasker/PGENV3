@@ -24,18 +24,24 @@ namespace PGENV3
             EncWordFile encFile = new EncWordFile();
             encFile.MdiParent = this;
             encFile.Show();
+            MessageBox.Show("Backup your file before the encryption!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
         private void EncExcelFile_Click(object sender, EventArgs e)
         {
             EncXLFile EncXL = new EncXLFile();
             EncXL.MdiParent = this;
             EncXL.Show();
+            MessageBox.Show("Backup your file before the encryption!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
         private void EncPDFFile_Click(object sender, EventArgs e)
         {
             EncPDFFile EncPDF = new EncPDFFile();
             EncPDF.MdiParent = this;
             EncPDF.Show();
+            MessageBox.Show("Backup your file before the encryption!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
         private void MenuItemDecWordFile_Click(object sender, EventArgs e)
         {
@@ -72,18 +78,24 @@ namespace PGENV3
             MultiWordEnc multipleWordEnc = new MultiWordEnc();
             multipleWordEnc.MdiParent = this;
             multipleWordEnc.Show();
+            MessageBox.Show("Backup your files before the encryption!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
         private void MenuItemMultipleXLEnc_Click(object sender, EventArgs e)
         {
             MultipleXLEnc multipleXLEnc = new MultipleXLEnc();
             multipleXLEnc.MdiParent = this;
             multipleXLEnc.Show();
+            MessageBox.Show("Backup your files before the encryption!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
         private void MenuItemMultiplePDFEnc_Click(object sender, EventArgs e)
         {
             MultiPDFEnc multiPDFEnc = new MultiPDFEnc();
             multiPDFEnc.MdiParent = this;
             multiPDFEnc.Show();
+            MessageBox.Show("Backup your files before the encryption!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
         private void MenuItemMultipleWordDec_Click(object sender, EventArgs e)
         {
