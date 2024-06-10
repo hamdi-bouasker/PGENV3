@@ -23,6 +23,8 @@ The ecnryption and decryption of bulk files are done using **_async / await Task
 - Excel 2019 and above
 - PDF all versions
 
+ ## _Compile / Installer_ 
+
 
 You can compile the code in Visual Studio or download the provided installer. 
 
