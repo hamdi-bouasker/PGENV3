@@ -4,6 +4,9 @@
 P-GEN is a password generator and files encryptor.
 
 
+![pgen.gif](https://github.com/IT-Support-L2/PGENV3/blob/master/pgen.gif)
+
+
 ## _Password Generator_
 
 It generates random unique passwords each time composed of lowercase and uppercase letters, digits and special characters.
