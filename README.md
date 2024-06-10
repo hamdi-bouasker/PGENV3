@@ -29,7 +29,7 @@ The ecnryption and decryption of bulk files are done using **_async / await Task
  ## _Compile / Installer_ 
 
 
-You can compile the code in Visual Studio or download the provided installer. 
+You can compile the code in Visual Studio but you will need to insert syncfusion license in Program.cs file or download the provided installer. 
 
 Windows will warns you to not install it but that warning is due the software is not signed with a digital certificate which should be purchased from commercial authority with the minimum of $260 yearly.
 
