@@ -20,7 +20,7 @@ The main feature is that the user is able to decrypt the file by cliking on it a
 
 The ecnryption and decryption of bulk files are done using **_async / await Tasks_** to save the UI from freezing and to offer smooth process.
 
-## _Supported File Version:_
+## _Supported File Version_
 
 - Word 2019 and above
 - Excel 2019 and above
