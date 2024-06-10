@@ -15,7 +15,7 @@ The files are encrypted using AES algorythm.
 
 The main feature is that the user is able to decrypt the file by cliking on it and insert the password at the prompt which makes it great feature when you want to send an encrypted file to someone by email because the receiver does not need the software to decrypt it.
 
-The ecnryption and decryption of bulk files are done using async / await Tasks tosave the UI form getting frozen and to offer smooth process.
+The ecnryption and decryption of bulk files are done using **_async / await Tasks_** to save the UI form getting frozen and to offer smooth process.
 
 ## _Supported File Version:_
 
