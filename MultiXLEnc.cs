@@ -63,7 +63,7 @@ namespace PGENV3
             ofd.Multiselect = true;
             var tasks1 = new List<Task>();
             var tasks2 = new List<Task>();
-            var tasks3 = new List<Task>();
+            //var tasks3 = new List<Task>();
 
             if (TbEncPwd1.Text == TbEncPwd2.Text && ofd.ShowDialog() == DialogResult.OK)
             {
@@ -80,10 +80,10 @@ namespace PGENV3
                     {
                         var task1 = Task.Run(() => EncryptXLFile(file));
                         var task2 = task1.ContinueWith(t => File.Delete(file));
-                        var task3 = task2.ContinueWith(t => LBLfileNames.Text = file);
+                        //var task3 = task2.ContinueWith(t => LBLfileNames.Text = file);
                         tasks1.Add(task1);
                         tasks2.Add(task2);
-                        tasks3.Add(task3);
+                        //tasks3.Add(task3);
                     }
                 }
             }
@@ -97,11 +97,11 @@ namespace PGENV3
                 await Task.WhenAll(tasks2);
                 LblProceeding.Text = "Almost done...";
                 await Task.Delay(1000);
-                await Task.WhenAll(tasks3);
+                //await Task.WhenAll(tasks3);
                 LblProceeding.Text = "Done!";
                 MessageBox.Show("Files Successfully Encrypted!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LblProceeding.ResetText();
-                LBLfileNames.ResetText();
+                
             }
 
             catch (AggregateException)
@@ -109,7 +109,7 @@ namespace PGENV3
 
                 MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the files you want to encrypt are not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 LblProceeding.ResetText();
-                LBLfileNames.ResetText();
+                
                 return;
             }
 
@@ -118,7 +118,7 @@ namespace PGENV3
 
                 MessageBox.Show("Ensure the password is correct!" + '\n' + '\n' + "Ensure the files you want to encrypt are not opened in another software!", "P-GEN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 LblProceeding.ResetText();
-                LBLfileNames.ResetText();
+               
                 return;
             }
         

@@ -39,7 +39,6 @@
             this.BtnPDFFileDec = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.LBLfileNames = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelImg
@@ -99,7 +98,7 @@
             // 
             this.LblProceeding.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblProceeding.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.LblProceeding.Location = new System.Drawing.Point(121, 383);
+            this.LblProceeding.Location = new System.Drawing.Point(121, 425);
             this.LblProceeding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblProceeding.Name = "LblProceeding";
             this.LblProceeding.Size = new System.Drawing.Size(321, 28);
@@ -161,24 +160,12 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Multiselect = true;
             // 
-            // LBLfileNames
-            // 
-            this.LBLfileNames.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLfileNames.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.LBLfileNames.Location = new System.Drawing.Point(60, 475);
-            this.LBLfileNames.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LBLfileNames.Name = "LBLfileNames";
-            this.LBLfileNames.Size = new System.Drawing.Size(442, 28);
-            this.LBLfileNames.TabIndex = 57;
-            this.LBLfileNames.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // MultiPDFDec
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(573, 584);
+            this.ClientSize = new System.Drawing.Size(569, 580);
             this.ControlBox = false;
-            this.Controls.Add(this.LBLfileNames);
             this.Controls.Add(this.labelImg);
             this.Controls.Add(this.BtnHidePWD1);
             this.Controls.Add(this.BtnShowPWD1);
@@ -211,6 +198,5 @@
         private System.Windows.Forms.Button BtnPDFFileDec;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Label LBLfileNames;
     }
 }

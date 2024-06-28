@@ -45,7 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.LBLfileNames = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnHidePWD2
@@ -114,7 +113,7 @@
             // 
             this.BtnExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
-            this.BtnExit.Location = new System.Drawing.Point(154, 539);
+            this.BtnExit.Location = new System.Drawing.Point(154, 532);
             this.BtnExit.Margin = new System.Windows.Forms.Padding(4);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(259, 44);
@@ -127,7 +126,7 @@
             // 
             this.LblProceeding.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblProceeding.ForeColor = System.Drawing.Color.White;
-            this.LblProceeding.Location = new System.Drawing.Point(124, 428);
+            this.LblProceeding.Location = new System.Drawing.Point(124, 459);
             this.LblProceeding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblProceeding.Name = "LblProceeding";
             this.LblProceeding.Size = new System.Drawing.Size(321, 28);
@@ -210,24 +209,12 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // LBLfileNames
-            // 
-            this.LBLfileNames.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLfileNames.ForeColor = System.Drawing.Color.White;
-            this.LBLfileNames.Location = new System.Drawing.Point(67, 495);
-            this.LBLfileNames.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LBLfileNames.Name = "LBLfileNames";
-            this.LBLfileNames.Size = new System.Drawing.Size(442, 28);
-            this.LBLfileNames.TabIndex = 53;
-            this.LBLfileNames.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // MultipleXLEnc
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(573, 584);
+            this.ClientSize = new System.Drawing.Size(569, 580);
             this.ControlBox = false;
-            this.Controls.Add(this.LBLfileNames);
             this.Controls.Add(this.BtnHidePWD2);
             this.Controls.Add(this.BtnHidePWD1);
             this.Controls.Add(this.BtnShowPWD2);
@@ -269,6 +256,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Label LBLfileNames;
     }
 }

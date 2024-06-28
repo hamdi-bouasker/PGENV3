@@ -242,7 +242,6 @@
             this.IsMdiContainer = true;
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
