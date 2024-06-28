@@ -14,7 +14,7 @@ namespace PGENV3
         [STAThread]
         static void Main()
         {
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NBaF5cXmZCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdnWXpec3VdRWZcUUV0WkU=");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Insert your license here");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
