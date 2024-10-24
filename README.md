@@ -4,7 +4,7 @@
 P-GEN is a password generator and files encryptor.
 
 
-![pgen.gif](https://github.com/IT-Support-L2/PGENV3/blob/master/pgen.gif)
+![pgen.gif](https://github.com/hamdi-bouasker/PGENV3/blob/master/pgen.gif)
 
 
 ## _Password Generator_
